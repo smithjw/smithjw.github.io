@@ -12,7 +12,8 @@ status: publish
 type: post
 published: true
 meta: {}
----To capture and keep track of all my notes I uses 
+---
+To capture and keep track of all my notes I uses 
 [nvALT](http://brettterpstra.com/project/nvalt/) on the Mac and 
 [Notesy](http://notesy-app.com/) on my iPhone and iPad. I sync these two using Dropbox and it only takes a couple of minutes to set up. Before discovering Notesy I used Simplenote on iOS and syncronised nvALT with that but much prefer my current setup. Firstly I opened up the preferences of nvALT, turned off the Syncronization with Simple note and pointed it to read notes from a folder that I'd created on Dropbox.
 

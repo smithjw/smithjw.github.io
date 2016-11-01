@@ -7,7 +7,8 @@ status: publish
 type: post
 published: true
 meta: {}
----**UPDATE:**
+---
+**UPDATE:**
  I've just modified the scripts to check if Logic Pro X is the frontmost app. If Logic is in the background, the functionality is the same, but if is the frontmost application, it adds a marker without switching applications.`
 
 

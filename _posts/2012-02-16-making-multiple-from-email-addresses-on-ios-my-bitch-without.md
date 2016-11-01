@@ -14,7 +14,8 @@ status: publish
 type: post
 published: true
 meta: {}
----This all came about because of work. I got a call from a client that we regularly work with asking if it's possible to consolidate his some 20 email accounts into one of his Google Apps accounts (this also works with regular Gmail accounts too) while still being able to reply and send from the individual addresses. As it turns out this can be quite tricky but I managed to find an article that outlined the steps perfectly, or so I thought to begin with. 
+---
+This all came about because of work. I got a call from a client that we regularly work with asking if it's possible to consolidate his some 20 email accounts into one of his Google Apps accounts (this also works with regular Gmail accounts too) while still being able to reply and send from the individual addresses. As it turns out this can be quite tricky but I managed to find an article that outlined the steps perfectly, or so I thought to begin with. 
 
 Firstly, a very quick word on my clients set up so far. With his multple accounts he has set them to forward all messages received to his one Google Apps account. 
 I haven't had any experience with using Google's "Mail Fetcher" so I can't speak to how this will work with that system. I've just tested Gmail/Google Apps' "Mail Fetcher" and it works a ok as well.

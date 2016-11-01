@@ -8,7 +8,8 @@ type: post
 published: true
 meta:
   passthrough_url: http://macsparky.com/blog/permalinkingss
----This is a very quick post in reply to MacSparky's (
+---
+This is a very quick post in reply to MacSparky's (
 [David Sparks](https://twitter.com/MacSparky)) post about how he achieves the little infinity (∞) permalink at the bottom of his pages. While there is nothing wrong with the way that he does it, using a little 
 [TextExpander](http://smilesoftware.com/TextExpander/index.html) snippet, there is a much quicker way to do it. All you need to do is open up the Blog Settings of the page that you want to add it to. Click on the Advanced tab, scroll down to the bottom and add this bit of code<center><a 
 href=

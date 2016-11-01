@@ -16,7 +16,8 @@ status: publish
 type: post
 published: true
 meta: {}
----Just some information on how to start a Screen Sharing or Back to My Mac (BTMM from now on) session from the command line.
+---
+Just some information on how to start a Screen Sharing or Back to My Mac (BTMM from now on) session from the command line.
 
 To launch a Screen Sharing session from the terminal on your local network, simply type
 

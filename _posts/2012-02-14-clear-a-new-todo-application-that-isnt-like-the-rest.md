@@ -12,7 +12,8 @@ status: publish
 type: post
 published: true
 meta: {}
----What happend this morning when I woke up to read my twitter feed? I saw a nice little note from 
+---
+What happend this morning when I woke up to read my twitter feed? I saw a nice little note from 
 [@UseClear](https://twitter.com/#!/useclear) saying "
 Hello New Zealand and Australia :-)". What could this mean? Well, it meant that Clear, the todo app that has had quite a bit of hype surrounding it, had launched.
 

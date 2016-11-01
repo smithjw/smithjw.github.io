@@ -11,7 +11,7 @@ status: publish
 type: post
 published: true
 meta: {}
----p.p1 {margin: 0.0px 0.0px 12.0px 0.0px; line-height: 21.0px; font: 12.0px 'Lucida Sans Unicode'; color: #555555} span.s1 {letter-spacing: 0.0px} span.s2 {text-decoration: underline ; letter-spacing: 0.0px color: #1915a6}
+---
 
 I've recently had the chance to try out a new applications that has just showed up on the Mac App Store called 
 [Pixy](http://pixyapp.com/) by Developer 

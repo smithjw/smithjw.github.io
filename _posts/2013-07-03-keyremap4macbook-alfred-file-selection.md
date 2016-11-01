@@ -7,7 +7,8 @@ status: publish
 type: post
 published: true
 meta: {}
----I've really enjoyed the switch from 
+---
+I've really enjoyed the switch from 
 [LaunchBar](http://www.obdev.at/products/launchbar/index.html) to 
 [Alfred](http://www.alfredapp.com), right around the time that version 2 was released, bar one little niggle that I've encountered. I've dived head first into the 
 [Workflows Forum](http://www.alfredforum.com/forum/3-share-your-workflows/) discovering neat and interesting ways of interacting with apps on my local Mac and even my Mac mini media server at home. One of the features that I haven't used extensively, that little niggle, is Alfred's File Selection.

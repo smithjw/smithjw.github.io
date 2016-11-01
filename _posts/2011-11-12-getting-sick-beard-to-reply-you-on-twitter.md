@@ -13,7 +13,8 @@ status: publish
 type: post
 published: true
 meta: {}
----Pretty simply tip here, all you need to do is edit a couple of config files and you're good to go. You'll want to shutdown Sick Beard before you do this as otherwise the changes don't hold. Navigate to wherever you've got Sick Beard installed on your computer and open up the config.ini file located at /Sick\ Beard/config.ini
+---
+Pretty simply tip here, all you need to do is edit a couple of config files and you're good to go. You'll want to shutdown Sick Beard before you do this as otherwise the changes don't hold. Navigate to wherever you've got Sick Beard installed on your computer and open up the config.ini file located at /Sick\ Beard/config.ini
 
 On about line 121 you'll find the Twitter section. What you want to change is the option marked twitter_prefix. I've changed mine to "Hey @smithjw" so that every time Sick Beard sends a notification on Twitter it will @ reply me from the account that I've set up for my server @_SteveSmith_
 

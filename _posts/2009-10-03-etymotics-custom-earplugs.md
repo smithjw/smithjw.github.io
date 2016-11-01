@@ -11,7 +11,8 @@ status: publish
 type: post
 published: true
 meta: {}
----So on Thursday i received the wonderful news that my custom earplugs were ready to be picked up.  These little babies drop the outside noise level by 25dB (but can come in 9dB, and 15dB versions) so that at the end of the night after a long DJ set my ears won't be ringing.  These also help with annoying people who decide to shout right into my ears.  
+---
+So on Thursday I received the wonderful news that my custom earplugs were ready to be picked up.  These little babies drop the outside noise level by 25dB (but can come in 9dB, and 15dB versions) so that at the end of the night after a long DJ set my ears won't be ringing.  These also help with annoying people who decide to shout right into my ears.  
 
 Check them out 
 [here](http://www.etymotic.com/ephp/erme.aspx)

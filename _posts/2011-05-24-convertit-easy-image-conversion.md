@@ -11,7 +11,8 @@ status: publish
 type: post
 published: true
 meta: {}
----![](/static/4f331d1f8754c7ec090e554a/50fe1c99e4b01c920a89f452/50fe1c99e4b01c920a89f4b3/1306198552066/Dock%20Icon.png/1000w)
+---
+![](/static/4f331d1f8754c7ec090e554a/50fe1c99e4b01c920a89f452/50fe1c99e4b01c920a89f4b3/1306198552066/Dock%20Icon.png/1000w)
 
 [ConvertIt](http://convertit.pastieapp.com/) is another micro-app from developer ﻿
 [Sam Gray](http://forrst.me/isamgray) & interface designer 
