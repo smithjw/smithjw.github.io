@@ -17,3 +17,10 @@ Feels good
 ![Feels Good Man](http://i2.kym-cdn.com/entries/icons/original/000/000/142/feelsgood.jpg)
 
 As an aside, I've almost spent $1000 on something I hardly ever use.
+
+## Code Highlighting
+
+``` bash
+#!/bin/bash
+echo "Well isn't this impressive"
+```
