@@ -1,5 +1,5 @@
 ---
-title: ‘Upgrading macOS via Self Service’
+title: "Upgrading macOS via Self Service"
 tags: [DEP, AD, JAMF]
 type: post
 ---
