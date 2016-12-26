@@ -1,7 +1,7 @@
 ---
 title: ‘Upgrading macOS via Self Service’
 tags: [DEP, AD, JAMF]()
-status: publish
+status: draft
 type: post
 layout: post
 published: false
