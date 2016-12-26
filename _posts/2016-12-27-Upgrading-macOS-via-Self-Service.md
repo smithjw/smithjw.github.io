@@ -1,10 +1,7 @@
 ---
 title: ‘Upgrading macOS via Self Service’
-tags: [DEP, AD, JAMF]()
-status: draft
+tags: [DEP, AD, JAMF]
 type: post
-layout: post
-published: false
 ---
 
 Following along [from this great post by Rich Trouton][2] I wanted to write a followup to how I’m deploying macOS Sierra in my environment.

@@ -125,3 +125,5 @@ defaults:
     values:
       layout: "post"
       type: "post"
+      status: "published"
+      published: "true"
