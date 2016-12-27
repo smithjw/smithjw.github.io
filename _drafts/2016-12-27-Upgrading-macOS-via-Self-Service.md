@@ -6,13 +6,28 @@ type: post
 
 Following along [from this great post by Rich Trouton][1] I wanted to write a followup to how I’m deploying macOS Sierra in my environment. I've followed a lot of the steps that Rich has outlined but it's probably easier to describe the full set of steps I'm taking rather than describing the differences. 
 
-Firstly I'm downloading the most recent version of the macOS Sierra installer from the App Store then running it through `[createOSXinstallPkg][2]` using the following command:
+Firstly I'm downloading the most recent version of the macOS Sierra installer from the App Store then running it through [createOSXinstallPkg][2] using the following command:
 
-```sudo ./createOSXinstallPkg --plist /path/to/xml.plist```
+```
+sudo ./createOSXinstallPkg --plist /path/to/xml.plist
+```
 
 The `--plist` option allows me to set all my arguments in a single file rather than having to specify them each time there's a new version of Sierra out.
 
-**Include example plist here**
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Source</key>
+    <string>/Volumes/Macintosh HD/Applications/Install macOS Sierra.app</string>
+    <key>Output</key>
+    <string>/Volumes/Macintosh HD/Installers/</string>
+    <key>Identifier</key>
+    <string>com.cultureamp.InstallmacOS.pkg</string>
+</dict>
+</plist>
+```
 
 Once this pkg has been created I upload it to the JSS using Casper Admin adding it to the macOS Installers Category.
 
@@ -26,6 +41,9 @@ This Policy is scoped to a Smart Group of Macs that have an outdated version of 
 ![](/images/install_macOS/01d_cache_scope.png)
 
 ![](/images/install_macOS/02a_group_outdated.png)
+*Test Caption*
+
+*Normal En*
 
 The Install Policy has a custom trigger of `installSierra` which is executed by a script in the Update to macOS Sierra Policy (described below)
 ![](/images/install_macOS/03a_install_general.png)
@@ -51,3 +69,4 @@ The Install Policy has a custom trigger of `installSierra` which is executed by 
 
 
 [1]:	https://derflounder.wordpress.com/2015/11/23/providing-os-x-upgrades-via-caspers-self-service/
+[2]:	https://github.com/munki/createOSXinstallPkg
