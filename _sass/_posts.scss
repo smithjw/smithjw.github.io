@@ -50,4 +50,7 @@
 img + em { 
 	font-size: 75%;
 	color: rgba(134, 134, 134, 0.96);
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
