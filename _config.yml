@@ -6,6 +6,7 @@ description: "A Blog about everything and nothing"
 baseurl:     ""
 url:         "https://smithjw.github.io"
 date_format: "%b %-d, %Y"
+highlighter: rogue
 
 # Google services
 google_verification:
