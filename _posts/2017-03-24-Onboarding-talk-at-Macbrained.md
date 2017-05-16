@@ -12,7 +12,8 @@ Last night I spoke via video conference at the March Macbrained event hosted at 
 - Jamf Pro
 - Apple's Device Enrolment Program (DEP)
 
-Onboarding in a Culture First Environment
+## Slides and embedded videos can be seen below
+
 <iframe src="https://drive.google.com/file/d/0B6TkYd7tTtTQcDhCOFRfUEN3blk/preview" width="840" height="525"></iframe>
 
 ---
