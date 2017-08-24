@@ -10,13 +10,36 @@ Because I had cloned my DB, Jamf thought I was still running a clustered environ
 
 Below is a guide on how to setup a `memcached` cluster on ElastiCache and get it talking with Jamf Pro
 
+First we need to create a Security Group for our cluster to enable or Jamf Pro instances to talk to the ElastiCache cluster. Open up your EC2 dashboard and click on Security Groups in the list on the left, followed by the Create Security Group button.
+
 ![Image Alt Text](/images/ElastiCache1.png)
+
+Now enter a name for your group, I used the creative `jss-memcached`. Create an Inbound Custom TCP rule that allows traffic on port 11211 from your instances IP addresses. I've selected Anywhere in this example as I'm creating the cluster in a subnet group with only private subnets not accessible from the Internet.
+
 ![Image Alt Text](/images/ElastiCache2.png)
+
+Head on over to the ElastiCache AWS service and click Get Started Now
+
 ![Image Alt Text](/images/ElastiCache3.png)
+
+Select Memcached as the Cluster Engine and give your cluster a name
+
 ![Image Alt Text](/images/ElastiCache4.png)
+
+By default, creating a cluster will provision a node with 13.5GB of memory, way too much for small instances. I've selected a `cache.t2.small` node for my testing.
+
 ![Image Alt Text](/images/ElastiCache5.png)
+
+Scroll further down and expand the Advanced Memcached settings section
+
 ![Image Alt Text](/images/ElastiCache6.png)
+
+You'll want to create a new Subnet Group, give it a name, and select several private subnets
+
 ![Image Alt Text](/images/ElastiCache7.png)
+
+Finally, select the `jss-memcached` Security Group we created earlier and click Create. Your node will be created and we can move onto configuring Jamf Pro to use `memcached` rather than `ehcache`
+
 ![Image Alt Text](/images/ElastiCache8.png)
 
 ---
