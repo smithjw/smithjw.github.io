@@ -6,6 +6,9 @@ description: "A Blog about everything and nothing"
 baseurl:     ""
 url:         "https://smithjw.github.io"
 date_format: "%b %-d, %Y"
+header_pages:
+ - about.md
+ - contact.html
 
 
 # Google services
@@ -49,7 +52,12 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
+<<<<<<< HEAD
 github_username: smithjw
+=======
+github_username:
+reddit_username:
+>>>>>>> johnotander/master
 bitbucket_username:
 stackoverflow_id:
 twitter_username: smithjw
@@ -123,6 +131,7 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
+<<<<<<< HEAD
 exclude: [vendor]
 
 # Default settings
@@ -136,3 +145,9 @@ defaults:
       type: "post"
       status: "published"
       published: "true"
+=======
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+>>>>>>> johnotander/master
