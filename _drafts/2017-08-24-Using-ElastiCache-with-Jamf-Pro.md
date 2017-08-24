@@ -14,7 +14,7 @@ First we need to create a Security Group for our cluster to enable or Jamf Pro i
 
 ![Image Alt Text](/images/ElastiCache1.png)
 
-Now enter a name for your group, I used the creative `jss-memcached`. Create an Inbound Custom TCP rule that allows traffic on port 11211 from your instances IP addresses. I've selected Anywhere in this example as I'm creating the cluster in a subnet group with only private subnets not accessible from the Internet.
+Now enter a name for your group, I used the creative name `jss-memcached`. Add an Inbound Custom TCP rule that allows traffic on port 11211 from your instances IP addresses. I've selected Anywhere in this example as I'm creating the cluster in a subnet group with only private subnets not accessible from the Internet.
 
 ![Image Alt Text](/images/ElastiCache2.png)
 
@@ -34,16 +34,45 @@ Scroll further down and expand the Advanced Memcached settings section
 
 ![Image Alt Text](/images/ElastiCache6.png)
 
-You'll want to create a new Subnet Group, give it a name, and select several private subnets
+You'll want to create a new Subnet Group, give it a name, and select several private subnets for your ElastiCache nodes to operate in.
 
 ![Image Alt Text](/images/ElastiCache7.png)
 
-Finally, select the `jss-memcached` Security Group we created earlier and click Create. Your node will be created and we can move onto configuring Jamf Pro to use `memcached` rather than `ehcache`
+Select the `jss-memcached` Security Group we created earlier and click Create. Your Cluster will be created and we can grab the individual Endpoint addresses of our ElastiCache nodes.
 
 ![Image Alt Text](/images/ElastiCache8.png)
 
+Click the Cluster's name to view more detail about it and copy each of the Nodes' Endpoint addresses.
+
+![Image Alt Text](/images/ElastiCache9.png)
+![Image Alt Text](/images/ElastiCache10.png)
+
+Now let's configure Jamf Pro to use `memcached` rather than `ehcache`.
+
+{% highlight bash %}
+# Open cache.properties
+sudo nano /path/to/Tomcat/ROOT/WEB-INF/classes/dal/cache.properties
+
+# Change ehcache to memcached
+# Be sure to remove DBAPPLIED_ from the start of the line
+cache.type=memcached
+
+# Open memcached.properties
+sudo nano /path/to/Tomcat/ROOT/WEB-INF/classes/dal/memcached.properties
+
+# Add the following lines substituting in your Endpoint addresses
+# This will point Jamf at your newly created memcached nodes
+memcached.endpoints[0]=endpoint.address.01.amazonaws.com:11211
+memcached.endpoints[1]=endpoint.address.02.amazonaws.com:11211
+
+# Restart Jamf Pro
+sudo /etc/init.d/jamf.tomcat8 restart
+{% endhighlight %}
+
+After the restart Jamf Pro will now be using `memcached` on ElastiCache 🙌🏽. If you have any issues with this, please hit me up on the [MacAdmins.Org Slack team][4]; I'm @smithjw.
 ---
 
 [1]:	https://aws.amazon.com/rds/
 [2]:  https://aws.amazon.com/ec2/
 [3]:  https://aws.amazon.com/elasticache/
+[4]:  https://macadmins.herokuapp.com/
