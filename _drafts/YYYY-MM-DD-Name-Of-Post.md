@@ -1,6 +1,6 @@
 ---
 title: ""
-tags: []
+tags: [List, Of, Tags]
 type: post
 ---
 
@@ -8,6 +8,10 @@ type: post
 
 ![Image Alt Text](/images/image.name.png)
 
+{% highlight bash %}
+
+{% endhighlight %}
+
 ---
 
-[1]:	
+[1]:
