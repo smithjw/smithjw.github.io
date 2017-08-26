@@ -1,6 +1,6 @@
 ---
 title: "Programming YubiKeys in a VM"
-tags: [List, Of, Tags]
+tags: [VM, VMWare Fusion, macOS, YubiKey, USB-C, MFA, 2FA]
 type: post
 ---
 
