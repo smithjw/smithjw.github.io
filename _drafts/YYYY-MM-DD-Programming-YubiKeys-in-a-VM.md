@@ -23,10 +23,10 @@ Luckily it's a pretty easy fix which I'll outline below:
 3. Right click on the VM and select Show Package Contents
 4. Open the `.vmx` file with a plain-text editor (I like [Atom][6])
 5. Add the following two lines at the end of the file and save
-```
-usb.generic.allowHID = "TRUE"
-usb.generic.allowLastHID = "TRUE"
-```
+  ```
+  usb.generic.allowHID = "TRUE"
+  usb.generic.allowLastHID = "TRUE"
+  ```
 6. Relaunch your VM
 7. With your VM booted, open the Settings, and navigate into the USB & Bluetooth table
   ![VMWare Settings](/images/YubiKey/YubiKey03.png)
