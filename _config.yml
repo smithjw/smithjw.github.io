@@ -27,7 +27,7 @@ bing_verification:
 # Optional features
 animated:             true
 show_related_posts:   true
-show_post_footers:    false
+show_post_footers:    true
 show_social_icons:    true
 ajaxify_contact_form: false
 enable_mathjax: false
@@ -57,7 +57,6 @@ facebook_comments_number: 10
 
 # Social icons
 github_username: smithjw
-github_username:
 reddit_username:
 bitbucket_username:
 stackoverflow_id:
@@ -65,7 +64,7 @@ twitter_username: smithjw
 skype_username:
 steam_nickname:
 google_plus_id:
-linkedin_username:
+linkedin_username: smithjw87
 angellist_username:
 medium_id:
 bitcoin_url:
@@ -80,7 +79,7 @@ show_sharing_icons: false
 share_facebook: false
 share_twitter: false
 share_googleplus: false
-share_linkedin: false
+share_linkedin: true
 share_digg: false
 share_tumblr: false
 share_reddit: false
