@@ -29,6 +29,7 @@ layout: default
       $('.carousel').slick({
         slidesToScroll: 1,
           autoplay: true,
+          lazyLoad: 'ondemand',
           autoplaySpeed: 5000,
           arrows: true,
           adaptiveHeight: true,
@@ -37,6 +38,7 @@ layout: default
       });
       $('.carousel-nav').slick({
         slidesToShow: 3,
+        lazyLoad: 'ondemand',
         slidesToScroll: 1,
         asNavFor: '.carousel',
         dots: true,
