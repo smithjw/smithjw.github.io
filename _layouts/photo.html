@@ -32,6 +32,16 @@ layout: default
           autoplaySpeed: 5000,
           arrows: true,
           adaptiveHeight: true,
+          fade: true,
+          asNavFor: '.carousel-nav'
+      });
+      $('.carousel-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.carousel',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
       });
     });
   </script>
