@@ -22,19 +22,19 @@ Below are my slides and videos from the session. If you'd like to discuss the ta
 ---
 Slide 10
 
-<script src="https://fast.wistia.com/embed/medias/urqs7ifvo2.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_xfw3axne7l seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+<script src="https://fast.wistia.com/embed/medias/urqs7ifvo2.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_urqs7ifvo2 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 ---
 Slide 12
 
-<script src="https://fast.wistia.com/embed/medias/qdlva1kpum.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_z3o7x9y24f seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+<script src="https://fast.wistia.com/embed/medias/qdlva1kpum.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_qdlva1kpum seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 ---
 Slide 17
 
-<script src="https://fast.wistia.com/embed/medias/h2zsl1r2k6.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_yst84ji410 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+<script src="https://fast.wistia.com/embed/medias/h2zsl1r2k6.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_h2zsl1r2k6 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 ---
 Slide 21
 
-<script src="https://fast.wistia.com/embed/medias/vfm3m56te5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_yst84ji410 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+<script src="https://fast.wistia.com/embed/medias/vfm3m56te5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_vfm3m56te5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 ---
 Slide 23
 
@@ -42,9 +42,9 @@ Slide 23
 ---
 Slide 24
 
-<script src="https://fast.wistia.com/embed/medias/f0bqjr4ki8.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_8gpvhpwgn4 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+<script src="https://fast.wistia.com/embed/medias/f0bqjr4ki8.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_f0bqjr4ki8 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 ---
 Slide 53
 
-<script src="https://fast.wistia.com/embed/medias/3mj1ef1fbo.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_hn1rfsgu0k seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+<script src="https://fast.wistia.com/embed/medias/3mj1ef1fbo.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:80.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_3mj1ef1fbo seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 ---
