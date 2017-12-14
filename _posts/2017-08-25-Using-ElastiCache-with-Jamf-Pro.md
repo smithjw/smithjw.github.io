@@ -39,14 +39,13 @@ You'll want to create a new Subnet Group, give it a name, and select several pri
 
 ![Subnet Group](/images/ElastiCache/ElastiCache7.png)
 
-Select the `jss-memcached` Security Group we created earlier and click Create. Your Cluster will be created and we can grab the individual Endpoint addresses of our ElastiCache nodes.
+Select the `jss-memcached` Security Group we created earlier and click Create.
 
 ![ElastiCache Nodes](/images/ElastiCache/ElastiCache8.png)
 
-Click the Cluster's name to view more detail about it and copy each of the Nodes' Endpoint addresses.
+Your Cluster will be created and we can grab the Configuration Endpoint for our ElastiCache cluster. By using the Configuration Endpoint rather than the addresses for individual nodes, your Jamf Pro cluster will be able to dynamically find all your memcached nodes as they are spun up/down rather than having to edit the file manually every time.
 
 ![ElastiCache Nodes](/images/ElastiCache/ElastiCache9.png)
-![ElastiCache Nodes](/images/ElastiCache/ElastiCache10.png)
 
 Now let's configure Jamf Pro to use `memcached` rather than `ehcache`.
 
@@ -61,20 +60,22 @@ cache.type=memcached
 # Open memcached.properties
 sudo nano /path/to/Tomcat/ROOT/WEB-INF/classes/dal/memcached.properties
 
-# Add the following lines substituting in your Endpoint addresses
-# This will point Jamf at your newly created memcached nodes
-memcached.endpoints[0]=endpoint.address.01.amazonaws.com:11211
-memcached.endpoints[1]=endpoint.address.02.amazonaws.com:11211
+# Change the memcached.aws.elasticache=false line to true
+memcached.aws.elasticache=true
+
+# Add in your Configuration Endpoint which will point Jamf at your
+# newly created memcached cluster
+memcached.endpoints[0]=configuration.endpoint.cfg.cache.amazonaws.com:11211
 
 # Restart Jamf Pro
 sudo /etc/init.d/jamf.tomcat8 restart
 {% endhighlight %}
 
-After the restart Jamf Pro will now be using `memcached` on ElastiCache 🙌🏽. If you have any issues with this, please hit me up on the [MacAdmins.Org Slack team][4]; I'm @smithjw.
+After the restart Jamf Pro will now be using `memcached` on ElastiCache 🙌🏽. If you have any issues with this, please hit me up on the [MacAdmins.Org Slack team][4]; I'm @smithjw on Slack and Twitter.
 
 ---
 
-[1]:	https://aws.amazon.com/rds/
+[1]:  https://aws.amazon.com/rds/
 [2]:  https://aws.amazon.com/ec2/
 [3]:  https://aws.amazon.com/elasticache/
 [4]:  https://macadmins.herokuapp.com/
