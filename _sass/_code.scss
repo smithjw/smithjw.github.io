@@ -7,6 +7,7 @@ pre code {
 pre,
 code {
   font-family: $monospace-font-family;
+  font-size: 15px;
 }
 
 code {
@@ -24,6 +25,11 @@ pre {
 .highlight .p {
   font-size: 1.125rem;
   line-height: 1;
+}
+
+.highlight {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 pre {
