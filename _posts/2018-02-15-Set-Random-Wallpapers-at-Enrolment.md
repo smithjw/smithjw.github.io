@@ -16,7 +16,7 @@ While this is an easy solution, I've recently been given a bunch more wallpapers
 
 Enjoy!
 
-{% highlight bash linenos %}
+{% highlight bash %}
 #!/bin/bash
 
 # Create an array with the contents of a folder
