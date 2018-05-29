@@ -3,10 +3,11 @@ title: "Culture First Onboarding at JNUC 2017"
 tags: [DEP, Self Service, JAMF, macOS Sierra, Mac, CasperSplash, SplashBuddy, Casper]
 type: post
 ---
+<span class="post-meta small">Updated 2018-05-29 to include presentation recording</span>
 
 This morning I had the privilege of presenting at JNUC 2017 in Minneapolis, Minnesota. My talk was an evolution on my previous talks about how I approach Onboarding new hires at Culture Amp.
 
-Below are my slides and videos from the session. If you'd like to discuss the talk further, reach out to me via email or on the [MacAdmins.org Slack channel](https://macadmins.herokuapp.com/).
+In the talk I covered the following topics:
 
 - Onboarding new employees
 - Standards within your organisation
@@ -14,6 +15,11 @@ Below are my slides and videos from the session. If you'd like to discuss the ta
 - Jamf Pro
 - Apple's Device Enrolment Program (DEP)
 - SplashBuddy
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/vMO5fP9ugOw?rel=0" frameborder="0" gesture="media" allowfullscreen></iframe>
+
+Below are my slides and embedded videos from the session. If you'd like to discuss the talk further, reach out to me via email or on the [MacAdmins.org Slack channel](https://macadmins.herokuapp.com/).
+
 
 ## Slides and embedded videos can be seen below
 
