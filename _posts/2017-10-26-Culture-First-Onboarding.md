@@ -2,6 +2,7 @@
 title: "Culture First Onboarding at JNUC 2017"
 tags: [DEP, Self Service, JAMF, macOS Sierra, Mac, CasperSplash, SplashBuddy, Casper]
 type: post
+comments: true
 ---
 <span class="post-meta small">Updated 2018-05-29 to include presentation recording</span>
 

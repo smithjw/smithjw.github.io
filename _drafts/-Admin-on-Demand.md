@@ -2,6 +2,7 @@
 title: "Admin on Demand"
 tags: [JAMF, Admin Rights, Standard User, Casper]
 type: post
+comments: true
 ---
 
 At [Culture Amp][1]

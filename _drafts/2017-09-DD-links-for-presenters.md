@@ -2,6 +2,7 @@
 title: "A Collection of Links for Presenters"
 tags: [List, Of, Tags]
 type: post
+comments: true
 ---
 
 - [Speaking Professionally][1]

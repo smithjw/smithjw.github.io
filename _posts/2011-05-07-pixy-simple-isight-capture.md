@@ -9,6 +9,7 @@ tags:
 - iSight
 status: publish
 type: post
+comments: true
 published: true
 meta: {}
 ---

@@ -2,6 +2,7 @@
 title: "Setting a Random Wallpaper at Enrolment"
 tags: [Onboarding, Bash, Jamf, AppleScript]
 type: post
+comments: true
 ---
 
 As part of the onboarding at Culture Amp, I configure the dock at set a default wallpaper. This isn't necessarily to lock down what Camper's can do with their Macs but more-so to get them up and running as quickly as possible and in a consistent environment.

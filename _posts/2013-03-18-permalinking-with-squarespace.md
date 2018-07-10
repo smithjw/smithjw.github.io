@@ -5,6 +5,7 @@ categories: []
 tags: []
 status: publish
 type: post
+comments: true
 published: true
 meta:
   passthrough_url: http://macsparky.com/blog/permalinkingss

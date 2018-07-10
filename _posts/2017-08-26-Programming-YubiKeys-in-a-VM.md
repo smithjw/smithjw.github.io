@@ -2,6 +2,7 @@
 title: "Programming YubiKeys in a VM"
 tags: [VM, VMWare Fusion, macOS, YubiKey, USB-C, MFA, 2FA]
 type: post
+comments: true
 ---
 
 I've finally had some time to play with the [YubiKey 4C][1] and decided I wanted to get it functioning as a second factor with [Okta][2]. [This guide][3] from Yubico seemed fairly straight-forward but I immediately ran into an issue. While the [YubiKey Personalization Tool][4] (what you use to program the YubiKey) would recognise my YubiKey, it would show that there was an unknown error.

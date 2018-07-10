@@ -2,6 +2,7 @@
 title: "Connecting Gooogle Calendar & Zoom with Zapier"
 tags: [GCal, Google Calendar, Zapier, Zoom, Zoom.us]
 type: post
+comments: true
 ---
 
 At [Culture Amp][1] I've setup all of our conference rooms as [Zoom Rooms][2]. In a nutshell, Zoom Rooms allow anyone to walk into a conference room and start a video conference without needing to bring their own computer.

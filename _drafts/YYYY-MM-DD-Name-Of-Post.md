@@ -2,6 +2,7 @@
 title: ""
 tags: [List, Of, Tags]
 type: post
+comments: true
 ---
 
 [Link][1]

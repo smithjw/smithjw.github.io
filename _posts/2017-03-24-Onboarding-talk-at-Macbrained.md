@@ -2,6 +2,7 @@
 title: "Onboarding talk at Macbrained"
 tags: [DEP, Self Service, JAMF, macOS Sierra, Mac, CasperSplash, SplashBuddy]
 type: post
+comments: true
 ---
 
 Last night I spoke via video conference at the March Macbrained event hosted at New Relic's San Francisco office. I'm uploading my slides here and embedded the videos that were present in my presentation. Some of the things that I covered in the talk

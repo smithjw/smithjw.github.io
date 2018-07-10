@@ -5,6 +5,7 @@ categories: []
 tags: []
 status: publish
 type: post
+comments: true
 published: true
 meta:
   passthrough_url: http://brettterpstra.com/2013/03/16/a-link-bundler-service-for-bitly/

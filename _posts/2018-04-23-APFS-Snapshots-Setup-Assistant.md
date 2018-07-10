@@ -2,6 +2,7 @@
 title: "Creating APFS Snapshots at the Setup Assistant"
 tags: [DEP, JAMF, Casper, APFS, macOS, Snapshot]
 type: post
+comments: true
 ---
 
 For the last few days I've been creating a set of enrolment policies for a loaner Mac, eg one that can be handed out in an instant to an employee if they forget their Mac at home (happens more than you think), or if theirs is damaged. At the centre of this is [Apple's Device Enrolment Program (DEP for short)][6] to auto-enrol the Mac and run all the Jamf policies.

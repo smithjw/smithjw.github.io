@@ -2,6 +2,7 @@
 title: "Macbrained Recording"
 tags: [DEP, Self Service, JAMF, macOS Sierra, Mac, CasperSplash, SplashBuddy]
 type: post
+comments: true
 ---
 
 The recording for my talk at Macbrained last week can be seen below

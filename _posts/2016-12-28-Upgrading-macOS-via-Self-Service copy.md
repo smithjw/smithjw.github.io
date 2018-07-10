@@ -2,6 +2,7 @@
 title: "Upgrading macOS via Self Service"
 tags: [DEP, Self Service, JAMF, macOS Sierra]
 type: post
+comments: true
 ---
 
 Taking many pointers [from this great post by Rich Trouton][1] a year ago, I wanted to write a followup to how I’m deploying macOS Sierra in my environment. I've followed a lot of the steps that Rich has outlined but it's probably easier to describe the full set of steps I'm taking rather than describing the differences. 

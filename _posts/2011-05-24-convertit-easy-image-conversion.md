@@ -9,6 +9,7 @@ tags:
 - Mac App Store
 status: publish
 type: post
+comments: true
 published: true
 meta: {}
 ---

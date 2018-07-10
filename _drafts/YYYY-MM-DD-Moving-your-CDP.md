@@ -2,6 +2,7 @@
 title: "Moving Jamf CDP Regions"
 tags: [Jamf, CDP, S3, AWS]
 type: post
+comments: true
 ---
 
 Create new S# bucket in desired region

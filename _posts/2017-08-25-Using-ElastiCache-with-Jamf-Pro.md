@@ -3,6 +3,7 @@ title:  "Using ElastiCache with Jamf Pro in Clustered Environments"
 tags:   [jamf, jss, elasticache, memcached, casper, clustered]
 date:   2017-08-25
 type:   post
+comments: true
 ---
 
 So the beta program for Jamf Pro 10 finally opened and I thought to myself "Why yes, I do want to play with the new shiny!". I set to work creating a clone of my Jamf database (hosted in [Amazon RDS][1]), and created a new [EC2][2] instance to run the beta on. Once I'd connected to the Jamf Pro web app, I ran into my first hurdle.
