@@ -4,7 +4,7 @@ tags: [Jamf, AppConfig, MDM, iOS, macOS, Zoom]
 type: post
 comments: true
 ---
-Towards the start of the year, we moved into a new office. To make sure that all equipment deployed into meeting rooms was working effectvively, we wiped and redeployed all Conference Room Macs (running Zoom Rooms) and iPads (Running as Zoom Room Controllers and Scheduling Displays). The last time I'd done this, while I could push out the Zoom apps to all devices, you would need to login and select the room to associate all devices with. Thankfully, Zoom released support for Managed App Config on iOS, and reading custom Configuration Profiles on macOS to enable the easy deployment of devices into rooms.
+Towards the start of 2019, Culture Amp moved into a new and larger office in Melbourne. To ensure that all equipment deployed into meeting rooms was working effectvively, we wiped and redeployed all Conference Room Macs (running Zoom Rooms) and iPads (Running as Zoom Room Controllers and Scheduling Displays). The last time I'd done this, while I could push out the Zoom apps to all devices, you would need to login and select the room to associate all devices with. Thankfully, Zoom released support for Managed App Config on iOS, and reading custom Configuration Profiles on macOS to enable the easy deployment of devices into rooms.
 
 You can find Zoom's support article on the topic [here][1]
 
@@ -49,11 +49,12 @@ You can use the following steps to create the needed EAs for this to work. For m
     - INPUT TYPE -> Text Field
     ![macOS EA 2](/images/zoom_auto_config/iOS_EA_3.png)
 1. Click **Save**
+1. Click back into the newly created EA and grab the ID of it from the URL (You'll need this later). 
 
 ## Using Inventory Preload in Jamf to stage information across your iOS/macOS devices
 Now that we have the Activation Code from the Zoom portal and have created the EAs required to store it, we can now generate a CSV that we'll upload to Jamf. There are two primary pieces of information that Zoom requires on iOS; `ActivationCode`, and `WorkMode`.
 
-The `ActivationCode` will link the iPad or Mac to the specific room and log it in on first launch of the Zoom Rooms app, and `WorkMode` is used to define whether the iPad is a Sceduling Display or a Room Controller. When adding this information to your CSV file you'll want to enter either `scheduling display` or `controller` in the `WorkMode` column (note the lowercase words).
+The `ActivationCode` will link the iPad or Mac to the specific room and log it in on first launch of the Zoom Rooms app, and `WorkMode` is used to define whether the iPad is a Scheduling Display or a Room Controller. When adding this information to your CSV file you'll want to enter either `scheduling display` or `controller` in the `WorkMode` column (note the lowercase words).
 
 Once you've got the Serial Number for each device (Macs & iPads), you'll be able to generate the CSV that we can then upload to Jamf. If these devices haven't been enrolled before, this data will be staged with Jamf until they enrol for the first time. If they are already enrolled, you'll see this data appear in its record the next time it performs a Recon.
 
@@ -72,12 +73,12 @@ For any Inventory Preload with Jamf you need to define the Serial Number & Devic
 ## Auto-configuring Zoom Rooms controller on iOS
 In order to configure the Zoom Rooms Controller on iOS, we're going to utilise Managed App Config which will deploy a configuration for Zoom Rooms when Jamf pushes the app down to the device. If you already push out Zoom Rooms to your fleet, you'll want to add the Zoom Rooms app a second time to your catalog of apps to configure with the following settings. You can then get creative with scoping so that the version with the App Config settings only deploys to devices where you've added the Activation Code and iPad Type fields.
 
-Once you've added the Zoom Rooms app, you'll need to enter the following on the **App Configuration** page.
+Once you've added the Zoom Rooms app, you'll need to enter the following on the **App Configuration** page substituting `#` at the end of the variable `$EXTENSIONATTRIBUTE_#` with the ID of the EA you created for Mobile Devices earlier.
 
 {% highlight xml %}
 <dict>
     <key>WorkMode</key>
-    <string>$EXTENSIONATTRIBUTE_1</string>
+    <string>$EXTENSIONATTRIBUTE_#</string>
     <key>ActivationCode</key>
     <string>$ROOM</string>
 </dict>
