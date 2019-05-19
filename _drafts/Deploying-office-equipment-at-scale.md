@@ -71,35 +71,20 @@ Here's a very small example of how your CSV should be setup to configure one Zoo
 | GG8YXXXXJ222  	| Mobile Device 	| 1111-2222-3333-4444 	| scheduling display 	|
 | C07XXXXNJ333  	| Computer      	| 1111-2222-3333-4444 	|                    	|
 
->For any Inventory Preload with Jamf you need to define the Serial Number & Device Type at the very minimum but there are a wealth of other fields that you can preload with data ([You can view these here][3]). As you can see in the example I've prefixed the column header for iPad Type with ***EA***. This is so that Jamf knows to put this data in the EA with that name.
-
-## Auto-configuring Zoom Rooms controller on iOS
-In order to configure the Zoom Rooms Controller on iOS, we're going to utilise Managed App Config which will deploy a configuration for Zoom Rooms when Jamf pushes the app down to the device. If you already push out Zoom Rooms to your fleet, you'll want to add the Zoom Rooms app a second time to your catalog of apps to configure with the following settings. You can then get creative with scoping so that the version with the App Config settings only deploys to devices where you've added the Activation Code and iPad Type fields.
-
-Once you've added the Zoom Rooms app, you'll need to enter the following on the **App Configuration** page substituting `#` at the end of the variable `$EXTENSIONATTRIBUTE_#` with the ID of the EA you created for Mobile Devices earlier.
-
-{% highlight xml %}
-<dict>
-    <key>WorkMode</key>
-    <string>$EXTENSIONATTRIBUTE_#</string>
-    <key>ActivationCode</key>
-    <string>$ROOM</string>
-</dict>
-{% endhighlight %}
+>For any Inventory Preload with Jamf you'll need to define the Serial Number & Device Type at the very minimum but there are a wealth of other fields that you can preload with data ([You can view these here][3]). As you can see in the example above, I've prefixed the column header for iPad Type with ***EA***; This is so that Jamf knows to put this data in the EA we created earlier.
 
 ## Auto-configuring Zoom Rooms controller on macOS
-In order to configure Zoom Rooms on the Mac mini to be signed in and associated with a room, we'll need to push down a Custom Profile. So that we don't need to craft a profile for each Mac that we're going to provision, we'll utilise Payload Variables ([which are documented here][4]). By using these variables in the profile, when it is pushed down to a given Mac, Jamf will replace it with the value associated with that Mac. In this case we're using the **Room** field for our Activation Codes on the Mac so in the `plist` we'll put in the variable `$ROOM`. 
+In order to configure Zoom Rooms on the Mac mini to be signed in and associated with a room, we'll need to push down a Custom Profile. So that we don't need to craft a profile for each Mac that we're going to provision, we'll utilise Payload Variables ([which are documented here][4]). By using these variables in the profile, when it is pushed down to a given Mac, Jamf will replace that variable with the value from that device's record. In this case we're using the **Room** field to hold our Activation Codes so in the `plist`, we'll put in the variable `$ROOM`. 
 
 You can see an example of the profile that we'll be deploying below. In order to upload this to Jamf you'll want to do the following:
 
-- Save the below as a `plist` on your Mac
-- Generate a new `PayloadUUID` (an easy way to do this is to run `uuidgen` in the teminal)
-- Grab the ID of the EA from Jamf (navigate to the EA and look in the URL for the ID)
-- In Jamf, navigate to **Computers**
-- Click on **Configuration Profiles**
-- Click **+ New**
-- Give your Profile a name
-- Click on **Custom Settings** in the sidebar, then click **Config**
+1. Save the below as a `plist` on your Mac
+1. Generate a new `PayloadUUID` (an easy way to do this is to run `uuidgen` in the teminal)
+1. In Jamf, navigate to **Computers**
+1. Click on **Configuration Profiles**
+1. Click **+ New**
+1. Give your Profile a name
+1. Click on **Custom Settings** in the sidebar, then click **Config**
     - Preference Domain -> `us.zoom.custom`
     - Upload the saved `plist`
     - Set your Scope
@@ -133,13 +118,28 @@ Once the profile pushes down to the Mac, you'll see that the varible has been re
 
 ![macOS Zoom Profile](/images/zoom_auto_config/macOS_profile.png)
 
-## Summary
-Thanks to Dan Jacobson @ Datadog for working out the required `PayloadIdentifier` for this to work on macOS.
+## Auto-configuring Zoom Rooms controller on iOS
+In order to configure the Zoom Rooms Controller on iOS, we're going to utilise [Managed App Config][5] which will deploy a configuration for Zoom Rooms when Jamf pushes the app down to the device. If you already push out Zoom Rooms to your fleet, you'll want to add the Zoom Rooms app a second time to your catalog of apps to configure with the following settings. You can then get creative with scoping so that the version with the App Config settings only deploys to devices where you've added the Activation Code and iPad Type fields.
 
-Hopefully this helps you get your Zoom Rooms up and running in a smooth and scaleable fashion. Let me know if anything doesn't work for you or I've made a horrible error in the post 😂.
+Once you've added the Zoom Rooms app, you'll need to enter the following on the **App Configuration** page substituting `#` at the end of the variable `$EXTENSIONATTRIBUTE_#` with the ID of the EA you created for Mobile Devices earlier.
+
+{% highlight xml %}
+<dict>
+    <key>WorkMode</key>
+    <string>$EXTENSIONATTRIBUTE_#</string>
+    <key>ActivationCode</key>
+    <string>$ROOM</string>
+</dict>
+{% endhighlight %}
+
+## Summary
+Thanks to Dan Jacobson @ Datadog for working out the required `PayloadIdentifier` for this to work on macOS with the Configuration Profile.
+
+Hopefully this helps you get your Zoom Rooms up and running in a smooth and scaleable fashion. Let me know if anything doesn't work for you or if I've made a horrible error in the post 😂.
 
 ---
 [1]: https://support.zoom.us/hc/en-us/articles/360021322672-Auto-Sign-in-for-Zoom-Rooms
 [2]: https://support.zoom.us/hc/en-us/articles/202822279-Add-Zoom-Rooms-on-Web-Portal
 [3]: https://docs.jamf.com/10.12.0/jamf-pro/administrator-guide/Inventory_Preload.html
 [4]: https://docs.jamf.com/10.12.0/jamf-pro/administrator-guide/Computer_Configuration_Profiles.html
+[5]: https://www.appconfig.org/
