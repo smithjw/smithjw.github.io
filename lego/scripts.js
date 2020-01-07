@@ -9,7 +9,7 @@ let parts_url = "";
 
 fetch(request(url))
     .then(response => {
-        
+
         if (response.ok) {
             parts_url = `${url}/parts/?page_size=100000`;
             window.addEventListener('load', partList(parts_url));
@@ -157,4 +157,4 @@ function partList(url) {
             return err;
         });
 
-};
+}
