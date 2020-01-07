@@ -9,6 +9,7 @@ date_format: "%b %-d, %Y"
 header_pages:
  - about.md
  - contact.html
+ - lego/index.html
 
 
 future: true
