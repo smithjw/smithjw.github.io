@@ -77,8 +77,8 @@ function partList(url) {
             console.log(object)
 
             object.forEach(function (object) {
-                var partID = object.id
-                console.log(partID)
+                var setPartID = set + '-' + object.id
+                console.log(setPartID)
 
                 const card = document.createElement('div');
                 card.setAttribute('class', 'card');
@@ -99,9 +99,9 @@ function partList(url) {
                 const info = document.createElement('span');
                 info.innerText = `Colour: ${object.color.name}\r\nQuantity: `;
 
-                let qtyState = localStorage.getItem(partID) ? localStorage.getItem(partID) : 0;
+                let qtyState = localStorage.getItem(setPartID) ? localStorage.getItem(setPartID) : 0;
                 var qty = document.createElement('span');
-                qty.setAttribute('id', partID);
+                qty.setAttribute('id', setPartID);
                 qty.innerHTML = qtyState;
                 var qtyTotal = document.createElement('span');
                 qtyTotal.innerText = ` of ${object.quantity}`;
@@ -134,19 +134,19 @@ function partList(url) {
 
                 buttonPlus.onclick = function () {
                     qtyState++;
-                    localStorage.setItem(partID, qtyState);
+                    localStorage.setItem(setPartID, qtyState);
                     return qty.innerHTML = qtyState;
                 };
 
                 buttonMinus.onclick = function () {
                     qtyState--;
-                    localStorage.setItem(partID, qtyState);
+                    localStorage.setItem(setPartID, qtyState);
                     return qty.innerHTML = qtyState;
                 };
 
                 buttonReset.onclick = function () {
                     qtyState = 0;
-                    localStorage.setItem(partID, qtyState);
+                    localStorage.setItem(setPartID, qtyState);
                     return qty.innerHTML = qtyState;
                 };
 
