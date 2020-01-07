@@ -1,26 +1,25 @@
-// const set = '7191-1';
+const set = '7191-1';
 // const set = 'MOC-7540';
 const app = document.getElementById('root');
-const logo = document.createElement('img');
-const container = document.createElement('div');
 
-let setValue = localStorage.getItem('set') ? localStorage.getItem('set') : '';
-var key = '';
+let legoSetID = localStorage.getItem('legoSetID') ? localStorage.getItem('legoSetID') : '';
+let rebrickApiKey = localStorage.getItem('rebrickApiKey') ? localStorage.getItem('rebrickApiKey') : '';
 
-logo.src = 'lego.svg'
-var type = 'sets';
-var url = `https://rebrickable.com/api/v3/lego/${type}/${setValue}`;
-var parts_url = "";
-
-container.setAttribute('class', 'container');
-logo.setAttribute('class', 'headerImage');
-
+var logo = document.createElement('img');
+var container = document.createElement('div');
 var options = document.createElement('div');
 var clearStorage = document.createElement('button');
 var apiKey = document.createElement('input');
 var setID = document.createElement('input');
 var loadSet = document.createElement('button');
 
+logo.src = 'lego.svg'
+var type = 'sets';
+var baseUrl = `https://rebrickable.com/api/v3/lego/${type}/${legoSetID}`;
+var partsUrl = '/parts/?page_size=100000';
+
+container.setAttribute('class', 'container');
+logo.setAttribute('class', 'headerImage');
 options.setAttribute('class', 'buttons');
 apiKey.setAttribute('class', 'field-light text');
 apiKey.setAttribute('type', 'text');
@@ -39,7 +38,7 @@ clearStorage.onclick = function () {
 
 loadSet.innerHTML = "Load";
 loadSet.onclick = function () {
-    set = document.getElementById('set').value;
+    legoSetID = document.getElementById('setID').value;
     checkSetID();
 };
 
@@ -74,13 +73,13 @@ function checkSetID() {
     fetch(request(url))
         .then(response => {
             if (response.ok) {
-                parts_url = `${url}/parts/?page_size=100000`;
-                window.addEventListener('load', partList(parts_url));
+                url = baseUrl + partsUrl;
+                window.addEventListener('load', partList(url));
                 return response;
             }
             else {
                 type = 'mocs';
-                url = `https://rebrickable.com/api/v3/lego/${type}/${setValue}`;
+                url = baseUrl;
                 console.log(url);
                 fetch(request(url))
                     .then(response => {
@@ -89,8 +88,8 @@ function checkSetID() {
                     .then(set => {
                         console.log(set);
                         logo.src = set.moc_img_url;
-                        parts_url = `${url}/parts/?page_size=100000`;
-                        window.addEventListener('load', partList(parts_url));
+                        url = url + partsUrl;
+                        window.addEventListener('load', partList(url));
                     })
                     .catch(console.error);
                 return response;
