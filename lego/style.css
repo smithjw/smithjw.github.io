@@ -47,21 +47,32 @@ p {
 }
 
 button {
-  padding: 1vw;
+  /* padding: 1vw; */
   font-size: 1.5vw;
   border: none;
   transition: all .2s linear;
   outline: 0;
+  background-color: rgb(192, 192, 192);
+  margin: auto;
 }
 
 .field-light.text {
   padding: 1vw;
   font-size: 1.5vw;
   margin-bottom: 0;
+  margin-right: auto;
+    margin-left: auto;
 }
 
 .headerImage {
-  max-width: 20vw;
+  width: 20vw;
+  height: 20vw;
+  background: url("lego.svg") center center no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
 }
 
 button:hover {

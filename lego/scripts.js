@@ -4,6 +4,7 @@ const app = document.getElementById('root');
 
 let legoSetID = localStorage.getItem('legoSetID') ? localStorage.getItem('legoSetID') : '';
 let rebrickApiKey = localStorage.getItem('rebrickApiKey') ? localStorage.getItem('rebrickApiKey') : '';
+let rebrickType = localStorage.getItem('rebrickType') ? localStorage.getItem('rebrickType') : '';
 
 var logo = document.createElement('img');
 var container = document.createElement('div');
@@ -13,9 +14,7 @@ var apiKey = document.createElement('input');
 var setID = document.createElement('input');
 var loadSet = document.createElement('button');
 
-logo.src = 'lego.svg'
-var type = 'sets';
-var baseUrl = `https://rebrickable.com/api/v3/lego/${type}/${legoSetID}`;
+var baseUrl = `https://rebrickable.com/api/v3/lego/${rebrickType}/${legoSetID}`;
 var partsUrl = '/parts/?page_size=100000';
 
 container.setAttribute('class', 'container');
@@ -23,32 +22,15 @@ logo.setAttribute('class', 'headerImage');
 options.setAttribute('class', 'buttons');
 apiKey.setAttribute('class', 'field-light text');
 apiKey.setAttribute('type', 'text');
-apiKey.setAttribute('id','apiKey');
+apiKey.setAttribute('id','rebrickApiKey');
 apiKey.setAttribute('placeholder','User API Key');
+apiKey.value = rebrickApiKey;
 setID.setAttribute('class', 'field-light text');
 setID.setAttribute('type', 'text');
-setID.setAttribute('id', 'set');
+setID.setAttribute('id', 'legoSetID');
 setID.setAttribute('placeholder', 'LEGO Set ID');
-
-clearStorage.innerHTML = "Clear Storage";
-clearStorage.onclick = function () {
-    localStorage.clear();
-    window.location.reload();
-};
-
-loadSet.innerHTML = "Load";
-loadSet.onclick = function () {
-    legoSetID = document.getElementById('setID').value;
-    checkSetID();
-};
-
-apiKey.onclick = function () {
-    apiKey.defaultValue = '';
-};
-
-setID.onclick = function () {
-    setID.defaultValue = '';
-};
+setID.setAttribute('placeholder', 'LEGO Set ID');
+setID.value = legoSetID;
 
 app.appendChild(logo);
 app.appendChild(options);
@@ -58,19 +40,56 @@ options.appendChild(setID);
 options.appendChild(loadSet);
 app.appendChild(container);
 
+clearStorage.innerHTML = "Reset";
+clearStorage.onclick = function () {
+    setID.value = '';
+    apiKey.value = '';
+    localStorage.clear();
+    // window.location.reload();
+};
+
+loadSet.innerHTML = "Load";
+loadSet.onclick = function () {
+    legoSetID = document.getElementById('legoSetID').value;
+    localStorage.setItem('legoSetID', legoSetID.toLowerCase());
+
+    rebrickApiKey = document.getElementById('rebrickApiKey').value;
+    localStorage.setItem('rebrickApiKey', rebrickApiKey);
+    
+    rebrickType = checkSetIDType(legoSetID);
+
+    logo.src = 'https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development.jpg';
+
+
+};
+
+
 function request(url) {
     var request = new Request(url, {
         method: 'GET',
         headers: new Headers({
-            'Authorization': 'key d72a0a731b4ae4b0baf67ad1cc2eb1c1',
+            'Authorization': `key ${rebrickApiKey}`,
             'Accept': 'application/json'
         })
     });
     return request;
 };
 
-function checkSetID() {
-    fetch(request(url))
+function checkSetIDType() {
+    console.log(legoSetID + ' ' + rebrickApiKey);
+    
+    if (legoSetID.includes('moc')) {
+        // localStorage.setItem('rebrickType', 'mocs');
+        type = 'moc';
+        return type;
+    }
+    else {
+        // localStorage.setItem('rebrickType', 'sets');
+        type = 'set';
+        return type;
+    }
+
+    fetch(request(baseUrl))
         .then(response => {
             if (response.ok) {
                 url = baseUrl + partsUrl;
