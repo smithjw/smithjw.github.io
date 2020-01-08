@@ -96,7 +96,7 @@ function setSetLogo() {
     console.log(rebrickApiKey)
     console.log(rebrickType)
 
-    url = baseUrl + rebrickType + 's/' + legoSetID;
+    url = baseUrl + rebrickType + 's/' + legoSetID + '/';
     console.log(url)
 
     fetch(request(url))
