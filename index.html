@@ -1,10 +1,8 @@
 ---
 layout: default
 ---
-{% assign posts_count = (paginator.posts | size) %}
 
 <div class="home">
-  {% if posts_count > 0 %}
     <div class="posts">
       {% for post in paginator.posts %}
         <div class="post py3">
@@ -20,11 +18,7 @@ layout: default
         </div>
       {% endfor %}
     </div>
-
     {% include pagination.html %}
-  {% else %}
-    <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
-  {% endif %}
 </div>
 <script type="text/javascript">
   $(document).ready(function(){

@@ -76,17 +76,13 @@ telegram_username:
 vk_id:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 # Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
-share_googleplus: false
+share_facebook: true
+share_twitter: true
 share_linkedin: true
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
+share_reddit: true
+
 
 text:
   pagination:
@@ -96,13 +92,8 @@ text:
     text:         'Share this post!'
     facebook:     'Share on Facebook'
     twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
     linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
     reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
   post:
     updated:        'Updated'
     minute_read:    'minute read'
@@ -118,7 +109,7 @@ text:
       sending:  'sending..'
       sent:     'Message sent!'
       error:    'Error!'
-  thanks: 'Thanks for contacting us. We will reply as soon as possible.'
+  thanks: 'Thanks for contacting me, I'll get back to you soon!'
   og_locale: 'en_US'
 
 # Build settings
@@ -129,9 +120,10 @@ permalink:    pretty
 paginate:     5
 sass:
   style: compressed
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - github-pages
 
 
 # Default settings
