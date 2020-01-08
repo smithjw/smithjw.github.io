@@ -24,8 +24,8 @@ logo.setAttribute('class', 'headerImage');
 options.setAttribute('class', 'buttons');
 apiKey.setAttribute('class', 'field-light text');
 apiKey.setAttribute('type', 'text');
-apiKey.setAttribute('id','rebrickApiKey');
-apiKey.setAttribute('placeholder','User API Key');
+apiKey.setAttribute('id', 'rebrickApiKey');
+apiKey.setAttribute('placeholder', 'User API Key');
 apiKey.value = rebrickApiKey;
 setID.setAttribute('class', 'field-light text');
 setID.setAttribute('type', 'text');
@@ -57,7 +57,7 @@ loadSet.onclick = function () {
 
     rebrickApiKey = document.getElementById('rebrickApiKey').value;
     localStorage.setItem('rebrickApiKey', rebrickApiKey);
-    
+
     rebrickType = checkSetIDType(legoSetID);
 
     setSetLogo();
@@ -79,13 +79,12 @@ function request(url) {
     return request;
 };
 
-function checkSetIDType() {    
+function checkSetIDType() {
     if (legoSetID.includes('moc')) {
         // localStorage.setItem('rebrickType', 'mocs');
         type = 'moc';
         return type;
-    }
-    else {
+    } else {
         // localStorage.setItem('rebrickType', 'sets');
         type = 'set';
         return type;
@@ -201,4 +200,6 @@ function partList(url) {
 
 }
 
-textFit(document.getElementsByClassName('box'), {multiLine: true});
+textFit(document.getElementsByClassName('box'), {
+    multiLine: true
+});
