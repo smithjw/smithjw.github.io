@@ -200,3 +200,5 @@ function partList(url) {
         });
 
 }
+
+textFit(document.getElementsByClassName('box'), {multiLine: true});
