@@ -52,8 +52,8 @@ clearStorage.onclick = function () {
 
 loadSet.innerHTML = "Load";
 loadSet.onclick = function () {
-    legoSetID = document.getElementById('legoSetID').value;
-    localStorage.setItem('legoSetID', legoSetID.toLowerCase());
+    legoSetID = document.getElementById('legoSetID').value.toLowerCase();
+    localStorage.setItem('legoSetID', legoSetID);
 
     rebrickApiKey = document.getElementById('rebrickApiKey').value;
     localStorage.setItem('rebrickApiKey', rebrickApiKey);
@@ -92,12 +92,12 @@ function checkSetIDType() {
 }
 
 function setSetLogo() {
-    console.log(legoSetID)
-    console.log(rebrickApiKey)
-    console.log(rebrickType)
+    console.log('LEGO Set ID: ' + legoSetID)
+    console.log('Rebrickable API Key: ' + rebrickApiKey)
+    console.log('LEGO Set Type: ' + rebrickType)
 
     url = baseUrl + rebrickType + 's/' + legoSetID + '/';
-    console.log(url)
+    console.log('Rebrickable Set URL: ' + url)
 
     fetch(request(url))
         .then(response => response.json())
@@ -110,6 +110,7 @@ function setSetLogo() {
 }
 
 function partList(url) {
+    console.log('Rebrickable Parts URL: ' + url) 
 
     fetch(request(url))
         .then(response => response.json())
@@ -117,9 +118,9 @@ function partList(url) {
             var object = parts.results;
             console.log(object)
 
+            console.log('Creating cards now')
             object.forEach(function (object) {
                 var setPartID = set + '-' + object.id
-                console.log(setPartID)
 
                 const card = document.createElement('div');
                 card.setAttribute('class', 'card');
@@ -159,7 +160,6 @@ function partList(url) {
                 var buttonReset = document.createElement('button');
                 buttonReset.innerHTML = "RESET";
 
-                console.log('Creating the Card now')
                 container.appendChild(card);
                 card.appendChild(title);
                 title.appendChild(name);
