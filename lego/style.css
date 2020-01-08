@@ -69,7 +69,7 @@ button {
   height: 20vw;
   background: url("lego.svg") center center no-repeat;
   background-size: cover;
-  object-fit: cover;
+  object-fit: contain;
   transition: all 1s ease-in-out;
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;

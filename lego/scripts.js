@@ -14,10 +14,12 @@ var apiKey = document.createElement('input');
 var setID = document.createElement('input');
 var loadSet = document.createElement('button');
 
-var baseUrl = `https://rebrickable.com/api/v3/lego/${rebrickType}/${legoSetID}`;
+// var baseUrl = `https://rebrickable.com/api/v3/lego/${rebrickType}/${legoSetID}`;
+var baseUrl = 'https://rebrickable.com/api/v3/lego/';
 var partsUrl = '/parts/?page_size=100000';
 
 container.setAttribute('class', 'container');
+logo.setAttribute('id', 'setImage');
 logo.setAttribute('class', 'headerImage');
 options.setAttribute('class', 'buttons');
 apiKey.setAttribute('class', 'field-light text');
@@ -58,9 +60,11 @@ loadSet.onclick = function () {
     
     rebrickType = checkSetIDType(legoSetID);
 
-    logo.src = 'https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development.jpg';
+    setSetLogo();
 
+    url = baseUrl + rebrickType + 's/' + legoSetID + partsUrl;
 
+    partList(url);
 };
 
 
@@ -75,9 +79,7 @@ function request(url) {
     return request;
 };
 
-function checkSetIDType() {
-    console.log(legoSetID + ' ' + rebrickApiKey);
-    
+function checkSetIDType() {    
     if (legoSetID.includes('moc')) {
         // localStorage.setItem('rebrickType', 'mocs');
         type = 'moc';
@@ -88,36 +90,22 @@ function checkSetIDType() {
         type = 'set';
         return type;
     }
+}
 
-    fetch(request(baseUrl))
-        .then(response => {
-            if (response.ok) {
-                url = baseUrl + partsUrl;
-                window.addEventListener('load', partList(url));
-                return response;
-            }
-            else {
-                type = 'mocs';
-                url = baseUrl;
-                console.log(url);
-                fetch(request(url))
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(set => {
-                        console.log(set);
-                        logo.src = set.moc_img_url;
-                        url = url + partsUrl;
-                        window.addEventListener('load', partList(url));
-                    })
-                    .catch(console.error);
-                return response;
-            }
-        })
+function setSetLogo() {
+    console.log(legoSetID)
+    console.log(rebrickApiKey)
+    console.log(rebrickType)
+
+    url = baseUrl + rebrickType + 's/' + legoSetID;
+    console.log(url)
+
+    fetch(request(url))
         .then(response => response.json())
         .then(set => {
             console.log(set);
-            logo.src = set.set_img_url;
+            document.getElementById('setImage').style.background = 'none';
+            logo.src = set[rebrickType + '_img_url'];
         })
         .catch(console.error);
 }
