@@ -10,8 +10,7 @@ header_pages:
  - about.md
  - contact.html
  - lego/index.html
-
-
+ - cv/index.html
 future: true
 timezone: Australia/Melbourne
 show_drafts: false
