@@ -15,7 +15,7 @@ If you run `open -a /path/to/super-cool-gif.gif`, the GIF will open in Preview b
 
 What I actually wanted was this 😃!
 
-![Animation](/images/terminal_gifs/terminal_gif_2.png)
+![Animation](/images/terminal_gifs/terminal_gif_2.gif)
 
 QuickLook will display GIFs in an animated fashion and as I leanrnt today from an [11 year old superuser post][1], you can trigger this from the Terminal with `qlmanage -p`.
 
