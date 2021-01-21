@@ -22,9 +22,9 @@ QuickLook will display GIFs in an animated fashion and as I leanrnt today from a
 When you have your super cool GIF to display for a user, make sure you're running this command from the specified user's context. In my case it was included in an [Outset OnDemand][2] script which would fire after the Policy executes but you could also try via `sudo -u`.
 
 {% highlight bash %}
-# Outset OnDemand running via Jamf Pro Script Policy
 
 #!/bin/bash
+# Outset OnDemand running via Jamf Pro Script Policy
 
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
 onDemand=/usr/local/outset/on-demand/show-gif.sh
@@ -46,11 +46,10 @@ exit 0
 
 {% endhighlight %}
 
-I've added `2>/dev/null` because the `qlmanage` process is quite chatty.
-
 {% highlight bash %}
-# Running directly in script via Jamf Pro Policy
+
 #!/bin/bash
+# Running directly in script via Jamf Pro Policy
 
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
 
@@ -58,6 +57,8 @@ sudo -u "$loggedInUser" qlmanage -p "/path/to/super-cool-gif.gif" 2>/dev/null
 
 exit 0
 {% endhighlight %}
+
+In both of these examples, I've added `2>/dev/null` because the `qlmanage` process is quite chatty.
 
 Hope this helps!
 
