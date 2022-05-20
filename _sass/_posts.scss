@@ -29,8 +29,8 @@
 
 .post-footer .avatar {
   margin: 2rem 0;
-  width: 100px;
-  border-radius: 50%;
+  width: 150px;
+  border-radius: 24%;
 }
 
 .meta,
@@ -47,7 +47,7 @@
   border-bottom: thin solid #f3f3f3;
 }
 
-img + em { 
+img + em {
 	font-size: 75%;
 	color: rgba(134, 134, 134, 0.96);
 	display:flex;

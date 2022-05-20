@@ -23,6 +23,10 @@ table thead tr {
   background: #EEEEEE;
 }
 
+.gist table tbody tr {
+    height: auto;
+  }
+
 table tbody tr {
   height: 50px;
 }
