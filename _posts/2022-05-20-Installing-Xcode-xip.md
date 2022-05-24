@@ -12,12 +12,12 @@ comments: true
 I recently (just yesterday), updated how we're installing Xcode on end-user systems at work and thought I might share the steps/script that we're using.
 
 ## Tools
-- [unxip](1)
-- [swiftDialog](2)
-- [Apple Developer Downloads](4)
+- [unxip][1]
+- [swiftDialog][2]
+- [Apple Developer Downloads][4]
 
 ## Setup
-1. Install [`unxip`](1) to a common location on disk
+1. Install [`unxip`][1] to a common location on disk
     - In my case it's `/Library/Management/Tools/unxip`
     - `unxip` is used as it is able to expand the Xcode.app file in about 3 minutes
 2. Download the current version of Xcode from the Apple Developer site as a `xip`
@@ -30,7 +30,7 @@ I recently (just yesterday), updated how we're installing Xcode on end-user syst
 6. This policy should be available via Self Service for end-users to run
 
 ## Script Walkthrough
-- This script utilises [`unxip`](1) for the quick expansion of the Xcode xip on end-user systems and [`swiftDialog`](2) for displaying progress to the end-user
+- This script utilises [`unxip`][1] for the quick expansion of the Xcode xip on end-user systems and [`swiftDialog`][2] for displaying progress to the end-user
 - You will need to pre-install `unxip` on end-user systems outside of this script as the release binary is not signed, nor packaged
 - The script will check for `swiftDialog` prior to kicking off, but because Bart provides a signed Package on his repo, the script will download/install it if not present
 - Once `swiftDialog` is running, it will check for the cached version of the Xcode.xip.pkg on the system. If not found that will be downloaded using your defined Custom Trigger
@@ -39,7 +39,7 @@ I recently (just yesterday), updated how we're installing Xcode on end-user syst
 - The script will then ensure the installing user is in the correct permissions groups
 - And finally we will install the underlying packages within the `.app` bundle
 
-[You can view the gist here](3)
+[You can view the gist here][3]
 
 {% gist b61a180b099624cebf61a8460fc594ed %}
 
