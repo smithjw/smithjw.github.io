@@ -3,10 +3,11 @@ title: "Installing the Xcode xip on end-user systems"
 tags: [jamf, standard-user, xcode, pkg]
 type: post
 comments: true
+image: /images/xcode-12-256x256.png
 ---
 
 <p align="center">
-  <img alt="Xcode App Icon" src="https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-256x256.png">
+    <img alt="Xcode App Icon" src="/images/xcode-12-256x256.png">
 </p>
 
 I recently (just yesterday), updated how we're installing Xcode on end-user systems at work and thought I might share the steps/script that we're using.

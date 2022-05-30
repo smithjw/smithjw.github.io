@@ -92,7 +92,11 @@
       content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
     {% if site.post_preview_image %}
+    {% if page.image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+    {% else %}
     <meta name="twitter:image" content="{{ site.url }}/images/me.png" />
+    {% endif %}
     {% endif %}
 
     <!-- Icons -->
