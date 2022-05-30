@@ -4,11 +4,8 @@ tags: [jamf, standard-user, xcode, pkg]
 type: post
 comments: true
 image: /images/xcode-12-256x256.png
+image_alt: Xcode App Icon
 ---
-
-<p align="center">
-    <img alt="Xcode App Icon" src="/images/xcode-12-256x256.png">
-</p>
 
 I recently (just yesterday), updated how we're installing Xcode on end-user systems at work and thought I might share the steps/script that we're using.
 
