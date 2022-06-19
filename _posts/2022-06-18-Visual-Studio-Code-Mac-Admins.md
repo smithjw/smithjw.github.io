@@ -12,7 +12,7 @@ A massive thanks to [Mat](https://mobile.twitter.com/macvfx) and the team at [Ma
 Below you'll find a collection of all the items I spoke about in the presentation, the recording (*coming soon*), and a link to the repo where I presented my talk from.
 
 ## Talk Recording
-*Coming Soon*
+{% include youtube.html id='-3ap5oWbia0' %}
 
 ## Talk Repositry 
 [MDOYVR22 - Visual Studio Code for Mac Admins](https://github.com/smithjw/vs-code-mac-admins)
