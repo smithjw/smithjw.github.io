@@ -3,14 +3,59 @@ languageCode = "en-us"
 title = "james' ubiquitous blog"
 theme = "m10c"
 disablePathToLower = true
-css = "/css/style.css"
+paginate = 8
 
 [Params]
 author = "James Smith"
 description = "Short description of the author"
 avatar = "images/me.png"
-favicon = "icons/favicon.ico"
-[Params.comment]
+favicon = "/icons/favicon.ico"
+
 [Params.comment.fediverse]
 host = "mastodon.social"
 user = "smithjw"
+
+[[Params.social]]
+icon = "github"
+name = "Github"
+url = "https://github.com/smithjw"
+[[Params.social]]
+icon = "mastodon"
+name = "Mastodon"
+url = "https://mastodon.social/@Smithjw"
+[[Params.social]]
+icon = "linkedin"
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/smithjw87"
+
+[[Params.social]]
+icon = "slack"
+name = "Mac Admins Slack"
+url = "https://macadmins.slack.com/messages/D1PELKDFT/team/U1PEQKG9Y/"
+
+[menu]
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 2
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 3
+[[menu.main]]
+identifier = "cv"
+name = "CV"
+url = "/cv/"
+weight = 4
+[[menu.main]]
+identifier = "lego"
+name = "LEGO"
+url = "/lego/"
+weight = 4
