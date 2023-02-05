@@ -1,3 +1,4 @@
+<!-- Sourced from https://danielpecos.com/2022/12/25/mastodon-as-comment-system-for-your-static-blog/ -->
 <h2>Comments</h2>
 
 <noscript>
@@ -49,6 +50,46 @@
     return result;
   }
 
+  function render_toots(toots, in_reply_to, depth) {
+    var tootsToRender = toots.filter(toot => toot.in_reply_to_id === in_reply_to);
+    tootsToRender.forEach(toot => render_toot(toots, toot, depth));
+  }
+
+  function render_toot(toots, toot, depth) {
+    toot.account.display_name = escapeHtml(toot.account.display_name);
+    toot.account.emojis.forEach(emoji => {
+      toot.account.display_name = toot.account.display_name.replace(`:${emoji.shortcode}:`, `<img src="${escapeHtml(emoji.static_url)}" alt="Emoji ${emoji.shortcode}" height="20" width="20" />`);
+    });
+    mastodonComment =
+      `<div class="mastodon-comment" style="margin-left: calc(var(--mastodon-comment-indent) * ${depth})">
+        <div class="author">
+          <div class="avatar">
+            <img src="${escapeHtml(toot.account.avatar_static)}" height=60 width=60 alt="">
+          </div>
+          <div class="details">
+            <a class="name" href="${toot.account.url}" rel="nofollow">${toot.account.display_name}</a>
+            <a class="user" href="${toot.account.url}" rel="nofollow">${user_account(toot.account)}</a>
+          </div>
+          <a class="date" href="${toot.url}" rel="nofollow">${toot.created_at.substr(0, 10)} ${toot.created_at.substr(11, 8)}</a>
+        </div>
+        <div class="content">${toot.content}</div>
+        <div class="status">
+          <div class="replies ${toot_active(toot, 'replies')}">
+            <a href="${toot.url}" rel="nofollow"><i class="fa fa-reply fa-fw"></i>${toot_count(toot, 'replies')}</a>
+          </div>
+          <div class="reblogs ${toot_active(toot, 'reblogs')}">
+            <a href="${toot.url}" rel="nofollow"><i class="fa fa-retweet fa-fw"></i>${toot_count(toot, 'reblogs')}</a>
+          </div>
+          <div class="favourites ${toot_active(toot, 'favourites')}">
+            <a href="${toot.url}" rel="nofollow"><i class="fa fa-star fa-fw"></i>${toot_count(toot, 'favourites')}</a>
+          </div>
+        </div>
+      </div>`;
+    document.getElementById('mastodon-comments-list').appendChild(DOMPurify.sanitize(mastodonComment, { 'RETURN_DOM_FRAGMENT': true }));
+
+    render_toots(toots, toot.id, depth + 1);
+  }
+
   function loadComments() {
     if (commentsLoaded) return;
 
@@ -59,44 +100,9 @@
         return response.json();
       })
       .then(function (data) {
-        if (data['descendants'] &&
-          Array.isArray(data['descendants']) &&
-          data['descendants'].length > 0) {
+        if (data['descendants'] && Array.isArray(data['descendants']) && data['descendants'].length > 0) {
           document.getElementById('mastodon-comments-list').innerHTML = "";
-          data['descendants'].forEach(function (reply) {
-            reply.account.display_name = escapeHtml(reply.account.display_name);
-            reply.account.emojis.forEach(emoji => {
-              reply.account.display_name = reply.account.display_name.replace(`:${emoji.shortcode}:`, `<img src="${escapeHtml(emoji.static_url)}" alt="Emoji ${emoji.shortcode}" height="20" width="20" />`);
-            });
-            mastodonComment =
-              `<div class="mastodon-comment">
-                  <div class="author">
-                    <div class="avatar">
-                      <img src="${escapeHtml(reply.account.avatar_static)}" height=60 width=60 alt="">
-                    </div>
-                    <div class="details">
-                      <a class="name" href="${reply.account.url}" rel="nofollow">${reply.account.display_name}</a>
-                      <a class="user" href="${reply.account.url}" rel="nofollow">${user_account(reply.account)}</a>
-                      <a class="date" href="${reply.url}" rel="nofollow">${reply.created_at.substr(0, 10)} ${reply.created_at.substr(11, 8)}</a>
-                    </div>
-
-
-                  </div>
-                  <div class="content">${reply.content}</div>
-                  <div class="status">
-                    <div class="replies ${toot_active(reply, 'replies')}">
-                      <a href="${reply.url}" rel="nofollow"><i class="fa fa-reply fa-fw"></i>${toot_count(reply, 'replies')}</a>
-                    </div>
-                    <div class="reblogs ${toot_active(reply, 'reblogs')}">
-                      <a href="${reply.url}" rel="nofollow"><i class="fa fa-retweet fa-fw"></i>${toot_count(reply, 'reblogs')}</a>
-                    </div>
-                    <div class="favourites ${toot_active(reply, 'favourites')}">
-                      <a href="${reply.url}" rel="nofollow"><i class="fa fa-star fa-fw"></i>${toot_count(reply, 'favourites')}</a>
-                    </div>
-                  </div>
-                </div>`;
-            document.getElementById('mastodon-comments-list').appendChild(DOMPurify.sanitize(mastodonComment, { 'RETURN_DOM_FRAGMENT': true }));
-          });
+          render_toots(data['descendants'], id, 0);
         } else {
           document.getElementById('mastodon-comments-list').innerHTML = "<p>Not comments found</p>";
         }
