@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2021/01/21/Launching-GIFs-Terminal
 comments: true
 date: "2021-01-21T00:00:00Z"
 tags:
@@ -12,7 +14,7 @@ type: post
 
 Did you know that you can launch a playing GIF from the Terminal? I didn't until today; but it's really quite simple.
 
-I'm working on deploying a new feature to my Mac users and wanted an easy way to show them how it works. I could launch a web-browser linking to a specific support article but wanted something that was simple and caused less friction which is where the thought of displaying a GIF to them after the Policy ran came to mind. 
+I'm working on deploying a new feature to my Mac users and wanted an easy way to show them how it works. I could launch a web-browser linking to a specific support article but wanted something that was simple and caused less friction which is where the thought of displaying a GIF to them after the Policy ran came to mind.
 
 If you run `open -a /path/to/super-cool-gif.gif`, the GIF will open in Preview but won't be animated 🙁.
 

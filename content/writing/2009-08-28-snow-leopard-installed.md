@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2009/08/28/snow-leopard-installed
 categories: []
 comments: true
 date: "2009-08-28T00:00:00Z"

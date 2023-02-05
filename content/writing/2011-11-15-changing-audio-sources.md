@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2011/11/15/changing-audio-sources
 categories: []
 comments: true
 date: "2011-11-15T00:00:00Z"

@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2010/01/05/services-and-automation
 categories: []
 comments: true
 date: "2010-01-05T00:00:00Z"

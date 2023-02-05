@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2017/03/31/Macbrained-Recording
 comments: true
 date: "2017-03-31T00:00:00Z"
 tags:

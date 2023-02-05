@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2009/08/22/introductions-please
 categories: []
 comments: true
 date: "2009-08-22T00:00:00Z"

@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2017/03/24/Onboarding-talk-at-Macbrained
 comments: true
 date: "2017-03-24T00:00:00Z"
 tags:

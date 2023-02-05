@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2017/05/16/Connecting-Google-Calendar-and-Zoom-with-Zapier
 comments: true
 date: "2017-05-16T00:00:00Z"
 tags:

@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2016/12/28/Upgrading-macOS-via-Self-Service copy
 comments: true
 date: "2016-12-28T00:00:00Z"
 tags:
@@ -10,7 +12,7 @@ title: Upgrading macOS via Self Service
 type: post
 ---
 
-Taking many pointers [from this great post by Rich Trouton][1] a year ago, I wanted to write a followup to how I’m deploying macOS Sierra in my environment. I've followed a lot of the steps that Rich has outlined but it's probably easier to describe the full set of steps I'm taking rather than describing the differences. 
+Taking many pointers [from this great post by Rich Trouton][1] a year ago, I wanted to write a followup to how I’m deploying macOS Sierra in my environment. I've followed a lot of the steps that Rich has outlined but it's probably easier to describe the full set of steps I'm taking rather than describing the differences.
 
 Firstly I'm downloading the most recent version of the macOS Sierra installer from the App Store then running it through [createOSXinstallPkg][2] using the following command:
 
@@ -54,7 +56,7 @@ The Cache Policy is scoped to a Smart Group of Macs that have an outdated versio
 
 ---
 
-The Install Policy has a custom trigger of `installSierra` which is executed by a script in the Update to macOS Sierra Policy (described below). I've set Action in the Packages step to Install Cached which ensures that it will use the pkg that had been packaged in the previous Cache policy. 
+The Install Policy has a custom trigger of `installSierra` which is executed by a script in the Update to macOS Sierra Policy (described below). I've set Action in the Packages step to Install Cached which ensures that it will use the pkg that had been packaged in the previous Cache policy.
 ![](/images/install_macOS/03a_install_general.png)
 *Custom Trigger set to installSierra*
 ![](/images/install_macOS/03b_install_package.png)
@@ -89,7 +91,7 @@ My version of the script can be found [here][3] (the original version by Rich is
 Like the Install Policy, the Upgrade Policy is scoped to a Smart Group where the package has already been cached and excludes Macs on macOS Sierra.
 ![](/images/install_macOS/06c_upgrade_scope_target.png)
 ![](/images/install_macOS/06d_upgrade_scope_exclusions.png)
-Here I'm enabling the Upgrade Policy for use in Self Service and Featuring it on the main page. 
+Here I'm enabling the Upgrade Policy for use in Self Service and Featuring it on the main page.
 ![](/images/install_macOS/06e_upgrade_self_service.png)
 
 ---

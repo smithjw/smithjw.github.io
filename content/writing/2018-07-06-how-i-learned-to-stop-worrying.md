@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2018/07/06/how-i-learned-to-stop-worrying
 date: "2018-07-06T00:00:00Z"
 tags:
 - DEP

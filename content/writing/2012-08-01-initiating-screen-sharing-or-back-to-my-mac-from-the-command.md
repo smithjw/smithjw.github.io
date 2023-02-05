@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2012/08/01/initiating-screen-sharing-or-back-to-my-mac-from-the-command
 categories: []
 comments: true
 date: "2012-08-01T00:00:00Z"
@@ -52,10 +54,10 @@ Another way to launch a BTMM session is to use the unique IPv6 that is given to 
 
 ![](/static/4f331d1f8754c7ec090e554a/50fe1c99e4b01c920a89f452/50fe1c99e4b01c920a89f498/1343787972433/Screen%20Shot%202012-08-01%20at%2011.46.08%20AM.png/1000w)
 
-You can then copy the IPv6 address and add it into the 
+You can then copy the IPv6 address and add it into the
 open vnc:// command.
 
-This address can also be found after initiating a BTMM session from the Finder, navigating to 
+This address can also be found after initiating a BTMM session from the Finder, navigating to
 ~/Library/Application Support/Screen Sharing/, & opening the file relating to Whichever computer that you just BTMMed.
 
 If using the IPv6 address, make sure you put it in square brackets. It won't work otherwise.

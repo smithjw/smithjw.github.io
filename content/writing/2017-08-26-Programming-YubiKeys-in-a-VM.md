@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2017/08/26/Programming-YubiKeys-in-a-VM
 comments: true
 date: "2017-08-26T00:00:00Z"
 tags:
@@ -35,7 +37,7 @@ Luckily it's a pretty easy fix which I'll outline below:
   {{< highlight bash >}}
   usb.generic.allowHID = "TRUE"
   usb.generic.allowLastHID = "TRUE"
-  {{< / highlight >}}  
+  {{< / highlight >}}
 6. Relaunch your VM
 7. With your VM booted, open the Settings, and navigate into the USB & Bluetooth table
   ![VMWare Settings](/images/YubiKey/YubiKey03.png)
