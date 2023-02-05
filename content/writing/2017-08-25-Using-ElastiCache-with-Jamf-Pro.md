@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2017/08/25/Using-ElastiCache-with-Jamf-Pro
 comments: true
 date: "2017-08-25T00:00:00Z"
 tags:

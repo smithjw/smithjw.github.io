@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2011/05/24/convertit-easy-image-conversion
 categories:
 - Reviews
 comments: true
@@ -16,7 +18,7 @@ type: post
 ![](/static/4f331d1f8754c7ec090e554a/50fe1c99e4b01c920a89f452/50fe1c99e4b01c920a89f4b3/1306198552066/Dock%20Icon.png/1000w)
 
 [ConvertIt](http://convertit.pastieapp.com/) is another micro-app from developer ﻿
-[Sam Gray](http://forrst.me/isamgray) & interface designer 
+[Sam Gray](http://forrst.me/isamgray) & interface designer
 [Andrew Sullivan](http://forrst.me/asullivan) with one sole purpose. That is to take your images, whatever format they may be, and convert them into various other formats. That's it really, just easy image conversion.
 
 When launched you are presented with a Dock and Menu Bar Icon. The only one which we need to worry about is the Menu Bar Icon as this is where the magic happens. Right off the bat if an image is dragged to the Menu Bar Icon a little HUD will drop down with some options for you to choose from. It will ask for the formats that you would like to convert your master image into which include: .png, .jpeg, .tiff, .pdf, .gif, .icns, .bmp, & .ico, & the location of where you would like your converted images saved.

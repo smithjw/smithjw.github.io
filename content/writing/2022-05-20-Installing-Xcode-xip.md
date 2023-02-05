@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2022/05/20/Installing-Xcode-xip
 comments: true
 date: "2022-05-20T00:00:00Z"
 image: /images/xcode-12-256x256.png

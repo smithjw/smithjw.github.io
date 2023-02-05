@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2018/04/23/APFS-Snapshots-Setup-Assistant
 comments: true
 date: "2018-04-23T00:00:00Z"
 tags:

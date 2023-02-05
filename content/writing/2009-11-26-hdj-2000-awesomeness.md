@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2009/11/26/hdj-2000-awesomeness
 categories: []
 comments: true
 date: "2009-11-26T00:00:00Z"

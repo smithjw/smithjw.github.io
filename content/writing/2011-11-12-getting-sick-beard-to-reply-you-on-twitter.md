@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2011/11/12/getting-sick-beard-to-reply-you-on-twitter
 categories: []
 comments: true
 date: "2011-11-12T00:00:00Z"

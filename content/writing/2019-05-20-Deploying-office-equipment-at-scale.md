@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2019/05/20/Deploying-office-equipment-at-scale
 date: "2019-05-20T00:00:00Z"
 tags:
 - Jamf
@@ -39,7 +41,7 @@ If you had previously created a room and can't see this activation code, you can
 ![Zoom Rooms Activation Code](/images/zoom_auto_config/zoom_2.png)
 
 ## Setting up text Extension Attributes in Jamf to hold the activation data for Zoom
-In order to push the Activation Code and Device Type down to your devices, you can use the following steps. 
+In order to push the Activation Code and Device Type down to your devices, you can use the following steps.
 
 Due to how Jamf handles Payload Variables in custom configurations (more on this later), we'll be using the **Room** field under the **User & Location** section of the devices record to hold the Activation Code. Because the iPad version of Zoom Rooms allows configuration as either a controller or a scheduling display, we'll create a new EA called **iPad Type** to hold this information.
 
@@ -59,7 +61,7 @@ Due to how Jamf handles Payload Variables in custom configurations (more on this
         - scheduling display
     ![iOS EA 2](/images/zoom_auto_config/iOS_EA_2.png)
 1. Click **Save**
-1. You can now grab the ID from the URL of the EA (You'll need this later). 
+1. You can now grab the ID from the URL of the EA (You'll need this later).
 ![iOS EA 3](/images/zoom_auto_config/iOS_EA_3.png)
 
 ## Using Inventory Preload in Jamf to stage information across your iOS/macOS devices
@@ -72,16 +74,16 @@ Once you've got the Serial Number for each device (Macs & iPads) we can start po
 Here's a very small example of how your CSV should be setup to configure one Zoom Room with a Mac, and two iPads:
 
 
-|Serial Number 	    | Device Type   	| Room  	            | EA iPad Type       	|
-|---------------    |---------------    |---------------------  |--------------------   |
-| GG8YXXXXJ111  	| Mobile Device 	| 1111-2222-3333-4444 	| controller         	|
-| GG8YXXXXJ222  	| Mobile Device 	| 1111-2222-3333-4444 	| scheduling display 	|
-| C07XXXXNJ333  	| Computer      	| 1111-2222-3333-4444 	|                    	|
+| Serial Number | Device Type   | Room                | EA iPad Type       |
+| ------------- | ------------- | ------------------- | ------------------ |
+| GG8YXXXXJ111  | Mobile Device | 1111-2222-3333-4444 | controller         |
+| GG8YXXXXJ222  | Mobile Device | 1111-2222-3333-4444 | scheduling display |
+| C07XXXXNJ333  | Computer      | 1111-2222-3333-4444 |                    |
 
 >For any Inventory Preload with Jamf you'll need to define the Serial Number & Device Type at the very minimum but there are a wealth of other fields that you can preload with data ([You can view these here][3]). As you can see in the example above, I've prefixed the column header for iPad Type with ***EA***; This is so that Jamf knows to put this data in the EA we created earlier.
 
 ## Auto-configuring Zoom Rooms controller on macOS
-In order to configure Zoom Rooms on the Mac mini to be signed in and associated with a room, we'll need to push down a Custom Profile. So that we don't need to craft a profile for each Mac that we're going to provision, we'll utilise Payload Variables ([which are documented here][4]). By using these variables in the profile, when it is pushed down to a given Mac, Jamf will replace that variable with the value from that device's record. In this case we're using the **Room** field to hold our Activation Codes so in the `plist`, we'll put in the variable `$ROOM`. 
+In order to configure Zoom Rooms on the Mac mini to be signed in and associated with a room, we'll need to push down a Custom Profile. So that we don't need to craft a profile for each Mac that we're going to provision, we'll utilise Payload Variables ([which are documented here][4]). By using these variables in the profile, when it is pushed down to a given Mac, Jamf will replace that variable with the value from that device's record. In this case we're using the **Room** field to hold our Activation Codes so in the `plist`, we'll put in the variable `$ROOM`.
 
 You can see an example of the profile that we'll be deploying below. In order to upload this to Jamf you'll want to do the following:
 

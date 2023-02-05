@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2012/01/26/using-dropbox-to-sync-notes-between-nvalt-notesy.html
 categories: []
 comments: true
 date: "2012-01-26T00:00:00Z"
@@ -14,8 +16,8 @@ tags:
 title: Using Dropbox to sync notes between nvALT & Notesy
 type: post
 ---
-To capture and keep track of all my notes I uses 
-[nvALT](http://brettterpstra.com/project/nvalt/) on the Mac and 
+To capture and keep track of all my notes I uses
+[nvALT](http://brettterpstra.com/project/nvalt/) on the Mac and
 [Notesy](http://notesy-app.com/) on my iPhone and iPad. I sync these two using Dropbox and it only takes a couple of minutes to set up. Before discovering Notesy I used Simplenote on iOS and syncronised nvALT with that but much prefer my current setup. Firstly I opened up the preferences of nvALT, turned off the Syncronization with Simple note and pointed it to read notes from a folder that I'd created on Dropbox.
 
 ![](/static/4f331d1f8754c7ec090e554a/50fe1c99e4b01c920a89f452/50fe1c99e4b01c920a89f4ba/1327578461073/nvALT%20Sync%20Prefs.png/1000w)

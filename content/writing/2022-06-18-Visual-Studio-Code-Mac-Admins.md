@@ -1,5 +1,5 @@
 ---
-alias:
+aliases:
   - /2022/06/18/Visual-Studio-Code-Mac-Admins
 comments: true
 date: "2022-06-18T00:00:00Z"

@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2018/02/15/Set-Random-Wallpapers-at-Enrolment
 comments: true
 date: "2018-02-15T00:00:00Z"
 tags:

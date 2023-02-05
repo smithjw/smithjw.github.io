@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2017/10/26/Culture-First-Onboarding
 comments: true
 date: "2017-10-26T00:00:00Z"
 tags:

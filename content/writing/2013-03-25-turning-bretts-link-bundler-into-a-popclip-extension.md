@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /2013/03/25/turning-bretts-link-bundler-into-a-popclip-extension
 categories: []
 comments: true
 date: "2013-03-25T00:00:00Z"
@@ -10,9 +12,9 @@ tags: []
 title: Turning @ttscoff's Link Bundler into a PopClip extension
 type: post
 ---
-Building on 
-[Brett Terpstra's](http://brettterpstra.com) link bundling service for Bit.ly, I thought I'd turn it into a 
-[PopClip](http://pilotmoon.com/popclip/) extension. All you need to do is follow 
+Building on
+[Brett Terpstra's](http://brettterpstra.com) link bundling service for Bit.ly, I thought I'd turn it into a
+[PopClip](http://pilotmoon.com/popclip/) extension. All you need to do is follow
 [Brett's instructions](http://brettterpstra.com/2013/03/16/a-link-bundler-service-for-bitly/) to install the service then install my PopClip extension and you should be good to go.Here are his instructions >Installation and Configuration
 
 
@@ -60,6 +62,6 @@ Next, you need an API key.
 
 
 
-  
-— http://brettterpstra.com/2013/03/16/a-link-bundler-service-for-bitly/You can find my PopClip extension 
+
+— http://brettterpstra.com/2013/03/16/a-link-bundler-service-for-bitly/You can find my PopClip extension
 [here](/s/LinkBundle.popclipextz)
