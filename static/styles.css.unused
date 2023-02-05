@@ -25,7 +25,7 @@
 
 .mastodon-comment .author .avatar img {
     margin-right: 1rem;
-    min-width: 60px;
+    min-width: 600px;
     border-radius: 5px;
 }
 
