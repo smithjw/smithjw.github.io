@@ -1,6 +1,7 @@
 ---
 aliases:
-  - /2016/12/28/Upgrading-macOS-via-Self-Service copy
+  - /2016/12/28/Upgrading-macOS-via-Self-Service
+  - /2016/12/28/Upgrading-macOS-via-Self-Service-copy
 comments: true
 date: "2016-12-28T00:00:00Z"
 tags:
