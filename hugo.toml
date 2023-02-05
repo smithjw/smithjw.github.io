@@ -1,0 +1,11 @@
+baseURL = "https://smithjw.me"
+languageCode = "en-us"
+title = "james' ubiquitous blog"
+theme = "m10c"
+disablePathToLower = true
+
+[Params]
+author = "James Smith"
+description = "Short description of the author"
+avatar = "images/me.png"
+favicon = "icons/favicon.ico"
