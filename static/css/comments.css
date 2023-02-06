@@ -1,18 +1,22 @@
+.comments {
+    margin: auto;
+    padding: 0 5%;
+}
+
 .mastodon-comment {
-    background-color: var(--block-background-color);
-    border-radius: var(--block-border-radius);
-    border: 1px var(--block-border-color) solid;
+    background-color: #242930;
+    border-radius: 10px;
     padding: 20px;
-    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     color: var(--font-color);
     font-size: var(--font-size);
+    margin-bottom: 15px;
 }
 
-.mastodon-comment p {
+/* .mastodon-comment p {
     margin-bottom: 0px;
-}
+} */
 
 .mastodon-comment .author {
     padding-top: 0;
@@ -25,7 +29,7 @@
 
 .mastodon-comment .author .avatar img {
     margin-right: 1rem;
-    min-width: 600px;
+    min-width: 60px;
     border-radius: 5px;
 }
 
