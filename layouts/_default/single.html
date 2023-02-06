@@ -28,10 +28,9 @@
   <div class="post-content">
     {{ .Content }}
   </div>
+  <hr>
   <div class="post-footer">
-    Outside If
     {{ if .Params.fediverse }}
-    Inside If
     {{ partial "comments.html" . }}
     {{ end }}
   </div>

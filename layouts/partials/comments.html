@@ -1,24 +1,29 @@
-<!-- Sourced from https://danielpecos.com/2022/12/25/mastodon-as-comment-system-for-your-static-blog/ -->
-<h2>Comments</h2>
-
+<link rel="stylesheet" href="/css/comments.css">
+<!-- <div id="comments-list"></div> -->
+<h3>Comments</h3>
 <noscript>
-  <div id="error">
-    Please enable JavaScript to view the comments powered by the Fediverse.
-  </div>
+  <p>You need JavaScript to view comments here.</p>
 </noscript>
+<div class="comments">
+  <p>You can use your Mastodon (or Fediverse) account to <a class="link"
+      href="https://{{ .Site.Params.comment.fediverse.host }}/@{{ .Site.Params.comment.fediverse.user }}/{{ .Params.fediverse }}"
+      target="_blank">reply
+      to this post here</a>.
+  </p>
 
-<p>You can use your Fediverse (i.e. Mastodon, among many others) account to reply to this <a class="link"
-    href="https://{{ .Site.Params.comment.fediverse.host }}/@{{ .Site.Params.comment.fediverse.user }}/{{ .Params.fediverse }}">post</a>.
-</p>
-<p id="mastodon-comments-list"></p>
+  <div class="mastodon-comments-list" id="mastodon-comments-list"></div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.3/purify.min.js"
   integrity="sha512-3dcbndbDLLWfKWevQu8C/1qVRcxx6h+eRDSnn3/pcBZHISRJgsj3u71U/Ad6nQVHrEi05hOSr6Hnb/p0pWc94w=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript">
+
+<script>
+  var commentsLoaded = false;
   var host = '{{ .Site.Params.comment.fediverse.host }}';
   var user = '{{ .Site.Params.comment.fediverse.user }}';
   var id = '{{ .Params.fediverse }}';
+  var toot_url = 'https://' + host + '/api/v1/statuses/' + id + '/context';
 
   function escapeHtml(unsafe) {
     return unsafe
@@ -29,19 +34,21 @@
       .replace(/'/g, "&#039;");
   }
 
-  var commentsLoaded = false;
-
-  function toot_active(toot, what) {
-    var count = toot[what + '_count'];
-    return count > 0 ? 'active' : '';
+  function tootActive(toot, what) {
+    var classes = [what];
+    var count = toot[what + "_count"];
+    if (count > 0) {
+      classes.push("active");
+    }
+    return classes;
   }
 
-  function toot_count(toot, what) {
-    var count = toot[what + '_count'];
-    return count > 0 ? count : '';
+  function tootCount(toot, what) {
+    var count = toot[what + "_count"];
+    return count > 0 ? count : "";
   }
 
-  function user_account(account) {
+  function userAccount(account) {
     var result = `@${account.acct}`;
     if (account.acct.indexOf('@') === -1) {
       var domain = new URL(account.url);
@@ -50,44 +57,82 @@
     return result;
   }
 
-  function render_toots(toots, in_reply_to, depth) {
-    var tootsToRender = toots.filter(toot => toot.in_reply_to_id === in_reply_to);
-    tootsToRender.forEach(toot => render_toot(toots, toot, depth));
+  function renderToot(response) {
+    console.log(response);
+    let reply = document.createElement('div');
+    reply.classList.add('mastodon-comment');
+
+    let author = document.createElement('div');
+    author.classList.add('author');
+
+    let avatar = document.createElement('div');
+    avatar.classList.add('avatar');
+    avatar.innerHTML = "<img class='avatar' src=" + escapeHtml(response.account.avatar_static) + " height=60 width=60>";
+
+    let details = document.createElement('div');
+    details.classList.add('details');
+    details.innerHTML += "<a class='name' href=" + response.account.url + " rel='nofollow' target='_blank'>" + response.account.display_name + "</a>";
+    details.innerHTML += "<a class='user' href=" + response.account.url + " rel='nofollow' target='_blank'>" + userAccount(response.account) + "</a>";
+
+    // Author Div
+    reply.appendChild(author);
+    author.appendChild(avatar);
+    author.appendChild(details);
+
+    author.innerHTML += "<a class='date' href=" + response.url + " rel='nofollow' target='_blank'>" + response.created_at.substr(0, 10) + response.created_at.substr(11, 8) + "</a>";
+
+    let content = document.createElement('div');
+    content.classList.add('content');
+    content.innerHTML = response.content;
+
+    let status = document.createElement('div');
+    status.classList.add('status');
+
+    let replies = document.createElement('div');
+    console.log(tootActive(response, "replies"));
+    replies.classList.add(tootActive(response, "replies"));
+    replies.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-reply fa-fw'></i>" + tootCount(response, "replies") + "</a>";
+
+    let reblogs = document.createElement('div');
+    console.log(tootActive(response, "reblogs"));
+    reblogs.classList.add(tootActive(response, "reblogs"));
+    reblogs.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-retweet fa-fw'></i>" + tootCount(response, "reblogs") + "</a>";
+
+    let favourites = document.createElement('div');
+    favourites.classList.add(tootActive(response, "favourites"));
+    favourites.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-star fa-fw'></i>" + tootCount(response, "favourites") + "</a>";
+
+    // Content Div
+    reply.appendChild(content);
+
+    // Status Div
+    reply.appendChild(status);
+    status.appendChild(replies);
+    status.appendChild(reblogs);
+    status.appendChild(favourites);
+
+    return reply;
   }
 
-  function render_toot(toots, toot, depth) {
-    toot.account.display_name = escapeHtml(toot.account.display_name);
-    toot.account.emojis.forEach(emoji => {
-      toot.account.display_name = toot.account.display_name.replace(`:${emoji.shortcode}:`, `<img src="${escapeHtml(emoji.static_url)}" alt="Emoji ${emoji.shortcode}" height="20" width="20" />`);
-    });
-    mastodonComment =
-      `<div class="mastodon-comment" style="margin-left: calc(var(--mastodon-comment-indent) * ${depth})">
-        <div class="author">
-          <div class="avatar">
-            <img src="${escapeHtml(toot.account.avatar_static)}" height=60 width=60 alt="">
-          </div>
-          <div class="details">
-            <a class="name" href="${toot.account.url}" rel="nofollow">${toot.account.display_name}</a>
-            <a class="user" href="${toot.account.url}" rel="nofollow">${user_account(toot.account)}</a>
-          </div>
-          <a class="date" href="${toot.url}" rel="nofollow">${toot.created_at.substr(0, 10)} ${toot.created_at.substr(11, 8)}</a>
-        </div>
-        <div class="content">${toot.content}</div>
-        <div class="status">
-          <div class="replies ${toot_active(toot, 'replies')}">
-            <a href="${toot.url}" rel="nofollow"><i class="fa fa-reply fa-fw"></i>${toot_count(toot, 'replies')}</a>
-          </div>
-          <div class="reblogs ${toot_active(toot, 'reblogs')}">
-            <a href="${toot.url}" rel="nofollow"><i class="fa fa-retweet fa-fw"></i>${toot_count(toot, 'reblogs')}</a>
-          </div>
-          <div class="favourites ${toot_active(toot, 'favourites')}">
-            <a href="${toot.url}" rel="nofollow"><i class="fa fa-star fa-fw"></i>${toot_count(toot, 'favourites')}</a>
-          </div>
-        </div>
-      </div>`;
-    document.getElementById('mastodon-comments-list').appendChild(DOMPurify.sanitize(mastodonComment, { 'RETURN_DOM_FRAGMENT': true }));
+  function embedTootReply(response) {
+    let toot = document.createElement('div');
+    toot.classList.add('mastodon-comment');
 
-    render_toots(toots, toot.id, depth + 1);
+    var embedToot = document.createElement("iframe");
+
+    embedToot.src = response.url + '/embed';
+    embedToot.width = "450";
+    // embedToot.height = "100%";
+    embedToot.class = "mastodon-embed";
+    // embedToot.style.maxWidth = "100%";
+    embedToot.style.overflow = 'hidden';
+    embedToot.style.border = 0;
+    embedToot.allowfullscreen = "allowfullscreen";
+    embedToot.scrolling = 'no';
+
+    toot.appendChild(embedToot);
+
+    return toot;
   }
 
   function loadComments() {
@@ -95,38 +140,30 @@
 
     document.getElementById("mastodon-comments-list").innerHTML = "Loading comments from the Fediverse...";
 
-    fetch('https://' + host + '/api/v1/statuses/' + id + '/context')
+    fetch(toot_url)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
         if (data['descendants'] && Array.isArray(data['descendants']) && data['descendants'].length > 0) {
           document.getElementById('mastodon-comments-list').innerHTML = "";
-          render_toots(data['descendants'], id, 0);
+          let descendants = data.descendants;
+          for (let i = 0; i < descendants.length; i++) {
+            // document.getElementById('mastodon-comments-list').appendChild(embedTootReply(descendants[i]),
+            //   { 'RETURN_DOM_FRAGMENT': true });
+            document.getElementById('mastodon-comments-list').appendChild(renderToot(descendants[i]),
+              { 'RETURN_DOM_FRAGMENT': true });
+          }
         } else {
-          document.getElementById('mastodon-comments-list').innerHTML = "<p>Not comments found</p>";
+          document.getElementById('mastodon-comments-list').innerHTML
+            = "<p>Be the first to comment</p>";
         }
 
         commentsLoaded = true;
       });
   }
 
-  function respondToVisibility(element, callback) {
-    var options = {
-      root: null,
-    };
-
-    var observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-          callback();
-        }
-      });
-    }, options);
-
-    observer.observe(element);
-  }
-
   var comments = document.getElementById("mastodon-comments-list");
-  respondToVisibility(comments, loadComments);
+  window.onload = loadComments;
+
 </script>
