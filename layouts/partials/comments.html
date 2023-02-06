@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/css/comments.css">
-<!-- <div id="comments-list"></div> -->
 <h3>Comments</h3>
 <noscript>
   <p>You need JavaScript to view comments here.</p>
@@ -58,7 +57,7 @@
   }
 
   function renderToot(response) {
-    console.log(response);
+    // console.log(response);
     let reply = document.createElement('div');
     reply.classList.add('mastodon-comment');
 
@@ -89,12 +88,10 @@
     status.classList.add('status');
 
     let replies = document.createElement('div');
-    console.log(tootActive(response, "replies"));
     replies.classList.add(tootActive(response, "replies"));
     replies.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-reply fa-fw'></i>" + tootCount(response, "replies") + "</a>";
 
     let reblogs = document.createElement('div');
-    console.log(tootActive(response, "reblogs"));
     reblogs.classList.add(tootActive(response, "reblogs"));
     reblogs.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-retweet fa-fw'></i>" + tootCount(response, "reblogs") + "</a>";
 
@@ -114,27 +111,6 @@
     return reply;
   }
 
-  function embedTootReply(response) {
-    let toot = document.createElement('div');
-    toot.classList.add('mastodon-comment');
-
-    var embedToot = document.createElement("iframe");
-
-    embedToot.src = response.url + '/embed';
-    embedToot.width = "450";
-    // embedToot.height = "100%";
-    embedToot.class = "mastodon-embed";
-    // embedToot.style.maxWidth = "100%";
-    embedToot.style.overflow = 'hidden';
-    embedToot.style.border = 0;
-    embedToot.allowfullscreen = "allowfullscreen";
-    embedToot.scrolling = 'no';
-
-    toot.appendChild(embedToot);
-
-    return toot;
-  }
-
   function loadComments() {
     if (commentsLoaded) return;
 
@@ -149,8 +125,6 @@
           document.getElementById('mastodon-comments-list').innerHTML = "";
           let descendants = data.descendants;
           for (let i = 0; i < descendants.length; i++) {
-            // document.getElementById('mastodon-comments-list').appendChild(embedTootReply(descendants[i]),
-            //   { 'RETURN_DOM_FRAGMENT': true });
             document.getElementById('mastodon-comments-list').appendChild(renderToot(descendants[i]),
               { 'RETURN_DOM_FRAGMENT': true });
           }
