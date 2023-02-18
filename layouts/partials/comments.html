@@ -6,7 +6,7 @@
 <div class="comments">
   <p>You can use your Mastodon (or Fediverse) account to <a class="link"
       href="https://{{ .Site.Params.comment.fediverse.host }}/@{{ .Site.Params.comment.fediverse.user }}/{{ .Params.fediverse }}"
-      target="_blank">reply
+      target="_blank" rel="noreferrer noopener me">reply
       to this post here</a>.
   </p>
 
@@ -57,7 +57,7 @@
   }
 
   function renderToot(response) {
-    // console.log(response);
+    console.log(response);
     let reply = document.createElement('div');
     reply.classList.add('mastodon-comment');
 
@@ -70,15 +70,15 @@
 
     let details = document.createElement('div');
     details.classList.add('details');
-    details.innerHTML += "<a class='name' href=" + response.account.url + " rel='nofollow' target='_blank'>" + response.account.display_name + "</a>";
-    details.innerHTML += "<a class='user' href=" + response.account.url + " rel='nofollow' target='_blank'>" + userAccount(response.account) + "</a>";
+    details.innerHTML += "<a class='name' href=" + response.account.url + " rel='noreferrer noopener me' target='_blank'>" + response.account.display_name + "</a>";
+    details.innerHTML += "<a class='user' href=" + response.account.url + " rel='noreferrer noopener me' target='_blank'>" + userAccount(response.account) + "</a>";
 
     // Author Div
     reply.appendChild(author);
     author.appendChild(avatar);
     author.appendChild(details);
 
-    author.innerHTML += "<a class='date' href=" + response.url + " rel='nofollow' target='_blank'>" + response.created_at.substr(0, 10) + response.created_at.substr(11, 8) + "</a>";
+    author.innerHTML += "<a class='date' href=" + response.url + " rel='noreferrer noopener me' target='_blank'>" + response.created_at.substr(0, 10) + response.created_at.substr(11, 8) + "</a>";
 
     let content = document.createElement('div');
     content.classList.add('content');
@@ -89,18 +89,19 @@
 
     let replies = document.createElement('div');
     replies.classList.add(tootActive(response, "replies"));
-    replies.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-reply fa-fw'></i>" + tootCount(response, "replies") + "</a>";
+    replies.innerHTML = "<a href=" + response.url + " rel='noreferrer noopener me' target='_blank'><i class='fa fa-reply fa-fw'></i>" + tootCount(response, "replies") + "</a>";
 
     let reblogs = document.createElement('div');
     reblogs.classList.add(tootActive(response, "reblogs"));
-    reblogs.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-retweet fa-fw'></i>" + tootCount(response, "reblogs") + "</a>";
+    reblogs.innerHTML = "<a href=" + response.url + " rel='noreferrer noopener me' target='_blank'><i class='fa fa-retweet fa-fw'></i>" + tootCount(response, "reblogs") + "</a>";
 
     let favourites = document.createElement('div');
     favourites.classList.add(tootActive(response, "favourites"));
-    favourites.innerHTML = "<a href=" + response.url + " rel='nofollow' target='_blank'><i class='fa fa-star fa-fw'></i>" + tootCount(response, "favourites") + "</a>";
+    favourites.innerHTML = "<a href=" + response.url + " rel='noreferrer noopener me' target='_blank'><i class='fa fa-star fa-fw'></i>" + tootCount(response, "favourites") + "</a>";
 
     // Content Div
     reply.appendChild(content);
+    // Look at adding images down the line https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_animate
 
     // Status Div
     reply.appendChild(status);
@@ -121,6 +122,7 @@
         return response.json();
       })
       .then(function (data) {
+        console.log(data);
         if (data['descendants'] && Array.isArray(data['descendants']) && data['descendants'].length > 0) {
           document.getElementById('mastodon-comments-list').innerHTML = "";
           let descendants = data.descendants;
