@@ -1,5 +1,6 @@
 ---
 comments: true
+draft: true
 date: "2022-06-18T00:00:00Z"
 image: /images/02_MacDevOps_JamesSmith.jpg
 image_alt: Presentation SketchNotes
