@@ -5,15 +5,14 @@ _site
 .ruby-version
 vendor
 
-
 # Ignore the config file that's used for gh-pages.
 _config.gh-pages.yml
 
 Gemfile.lock
 
 # Generated files by hugo
-/resources/
-/public/
+/resources
+/public
 /assets/jsconfig.json
 hugo_stats.json
 
