@@ -1,73 +1,47 @@
 baseURL = "https://smithjw.me"
 languageCode = "en-us"
-title = "james' ubiquitous blog"
-# disablePathToLower = true
 paginate = 8
+# sectionPagesMenu = "main"
+title = "james' ubiquitous blog"
 
 [module]
     [[module.imports]]
         path = "github.com/lukeorth/poison"
+    [[module.imports]]
+        path = "github.com/AlanTanner/pdfjs-hugo-module"
+[menu]
+    [[menu.main]]
+        identifier = 'posts'
+        name = 'Posts'
+        url = '/posts/'
+        weight = 1
+    [[menu.main]]
+        identifier = 'cv'
+        name = 'CV'
+        url = '/cv/'
+        weight = 2
 
 [Params]
-    brand = "James Smith"                               # name of your site - appears in the sidebar
-    brand_image = "/images/me.png"                      # path to the image shown in the sidebar
+    brand = "James Smith"
+    brand_image = "/images/me.png"
     dark_mode = true
     description = "a site about everything and nothing"
     favicon = "/icons/favicon.ico"
 
+    github_url = "https://github.com/smithjw"
+    linkedin_url = "https://www.linkedin.com/in/smithjw87"
+    mastodon_url = "https://mastodon.social/@Smithjw"
+    slack_url = "https://macadmins.slack.com/messages/D1PELKDFT/team/U1PEQKG9Y/"
+    twitter_url = "https://twitter.com/smithjw"
+
     menu = [
-        { Name = "About", URL = "/about/", HasChildren = false },
+        { Name = "Content", URL = "/content/", HasChildren = true },
         { Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 3 },
     ]
 
     [Params.comment.fediverse]
         host = "mastodon.social"
         user = "smithjw"
-
-[[Params.social]]
-    icon = "github"
-    name = "Github"
-    url = "https://github.com/smithjw"
-[[Params.social]]
-    icon = "mastodon"
-    name = "Mastodon"
-    url = "https://mastodon.social/@Smithjw"
-[[Params.social]]
-    icon = "linkedin"
-    name = "LinkedIn"
-    url = "https://www.linkedin.com/in/smithjw87"
-
-[[Params.social]]
-    icon = "slack"
-    name = "Mac Admins Slack"
-    url = "https://macadmins.slack.com/messages/D1PELKDFT/team/U1PEQKG9Y/"
-
-[menu]
-    [[menu.main]]
-        identifier = "home"
-        name = "Home"
-        url = "/"
-        weight = 1
-    [[menu.main]]
-        identifier = "tags"
-        name = "Tags"
-        url = "/tags/"
-        weight = 2
-    [[menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about/"
-        weight = 3
-    [[menu.main]]
-        identifier = "cv"
-        name = "CV"
-        url = "/cv/"
-        weight = 4
-    [[menu.main]]
-        identifier = "lego"
-        name = "LEGO"
-        url = "/lego/"
-        weight = 4
 
 [markup.goldmark.renderer]
     unsafe = true
