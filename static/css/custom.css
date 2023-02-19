@@ -7,3 +7,33 @@
     font-weight: 300;
     font-family: "Source Code Pro", Consolas, monospace;
 }
+
+.menu-heading {
+    margin-bottom: 0;
+}
+
+.menu-socials {
+    margin-top: 1rem;
+}
+
+.summary {
+    width: 100%;
+}
+
+.tags {
+    /* position: relative; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* max-width: 100%; */
+}
+
+.tags ul {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tags li {
+    display: inline-block;
+}
