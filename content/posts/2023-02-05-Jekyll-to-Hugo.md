@@ -2,16 +2,17 @@
 comments: true
 draft: true
 date: "2022-06-18T00:00:00Z"
-image: /images/02_MacDevOps_JamesSmith.jpg
-image_alt: Presentation SketchNotes
+featuredImage: https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg
 tags:
   - jekyll
   - hugo
   - github
 title: 'Migrating from Jekyll to Hugo'
 type: post
-fediverse: 109811260017364964
 ---
+
+Things look different here because I've switched over from Jekyll to Hugo, read on if you're interested in how that went for me
+<!--more-->
 
 External References:
 - [Adding comments to your static blog with Mastodon (2020-12-20)](https://carlschwan.eu/2020/12/29/adding-comments-to-your-static-blog-with-mastodon/) - Carl Schwan
@@ -35,5 +36,3 @@ It's very basic and just takes the dates/title from the filename and arranges th
 
 If you've customised this, it probably won't work for you
 
-<!-- <iframe src="https://aus.social/@bartreardon/109811298361345304/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe>
-<script src="https://static-cdn.mastodon.social/embed.js" async="async"></script> -->

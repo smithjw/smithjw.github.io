@@ -3,7 +3,7 @@ aliases:
   - /2022/06/18/Visual-Studio-Code-Mac-Admins
 comments: true
 date: "2022-06-18T00:00:00Z"
-image: /images/02_MacDevOps_JamesSmith.jpg
+featuredImage: /images/02_MacDevOps_JamesSmith.jpg
 image_alt: Presentation SketchNotes
 tags:
   - jamf
@@ -14,13 +14,15 @@ title: 'Visual Studio Code for Mac Admins: MDOYVR22'
 type: post
 ---
 
-A massive thanks to [Mat](https://mobile.twitter.com/macvfx) and the team at [MacDevOps YVR](https://mdoyvr.com/schedule-2022/) for giving me the opportunity to present again at this year's conference (despite the crazy time difference). The Sketchnote above was created by the talented [Ashton Rodenhiser](https://www.linkedin.com/in/ashtonrodenhiser/) of [Mind's Eye Creative](https://www.mindseyecreative.ca/)!
+A massive thanks to [Mat](https://mobile.twitter.com/macvfx) and the team at [MacDevOps YVR](https://mdoyvr.com/schedule-2022/) for giving me the opportunity to present again at this year's conference (despite the crazy time difference).
+
+The Sketchnote above was created by the talented [Ashton Rodenhiser](https://www.linkedin.com/in/ashtonrodenhiser/) of [Mind's Eye Creative](https://www.mindseyecreative.ca/)!
+<!--more-->
 
 Below you'll find a collection of all the items I spoke about in the presentation, the recording (*coming soon*), and a link to the repo where I presented my talk from.
 
 ## Talk Recording
 {{< youtube 3ap5oWbia0 >}}
-<!-- {% include youtube.html id='-3ap5oWbia0' %} -->
 
 ## Talk Repositry
 [MDOYVR22 - Visual Studio Code for Mac Admins](https://github.com/smithjw/vs-code-mac-admins)

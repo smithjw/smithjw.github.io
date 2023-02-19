@@ -14,7 +14,8 @@ title: Creating APFS Snapshots at the Setup Assistant
 type: post
 ---
 
-For the last few days I've been creating a set of enrolment policies for a loaner Mac, eg one that can be handed out in an instant to an employee if they forget their Mac at home (happens more than you think), or if theirs is damaged. At the centre of this is [Apple's Device Enrolment Program (DEP for short)][6] to auto-enrol the Mac and run all the Jamf policies.
+For the last few days I've been creating a set of enrolment policies for a loaner Mac, eg one that can be handed out in an instant to an employee if they forget their Mac at home (happens more than you think), or if theirs is damaged. <!--more-->At the centre of this is [Apple's Device Enrolment Program (DEP for short)][6] to auto-enrol the Mac and run all the Jamf policies.
+
 
 Initially I would test this in a VM, but as I got closer to a final set, I began testing on physical hardware. This is where I ran into the issue of needing to reinstall the OS after each trial to run it through the DEP enrolment process correctly. This added 40+ mins of waiting to each run-through.
 
