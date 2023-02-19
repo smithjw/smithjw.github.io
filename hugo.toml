@@ -1,8 +1,7 @@
 baseURL = "https://smithjw.me"
 languageCode = "en-us"
 title = "james' ubiquitous blog"
-# theme = "m10c"
-disablePathToLower = true
+# disablePathToLower = true
 paginate = 8
 
 [module]
@@ -10,10 +9,16 @@ paginate = 8
         path = "github.com/lukeorth/poison"
 
 [Params]
-    author = "James Smith"
-    avatar = "images/me.png"
-    description = "Short description of the author"
+    brand = "James Smith"                               # name of your site - appears in the sidebar
+    brand_image = "/images/me.png"                      # path to the image shown in the sidebar
+    dark_mode = true
+    description = "a site about everything and nothing"
     favicon = "/icons/favicon.ico"
+
+    menu = [
+        { Name = "About", URL = "/about/", HasChildren = false },
+        { Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 3 },
+    ]
 
     [Params.comment.fediverse]
         host = "mastodon.social"
