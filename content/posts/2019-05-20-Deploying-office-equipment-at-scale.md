@@ -10,6 +10,7 @@ tags:
 - macOS
 - Zoom
 title: Automatic Configuration of Zoom Rooms on macOS & iOS
+summary: An in-depth look at how I deployed Zoom Rooms to iPads and Mac minis in a large office space while working at Culture Amp
 type: post
 ---
 

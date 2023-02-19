@@ -13,6 +13,7 @@ type: post
 ---
 
 I ran into an interesting issue today, Macs that I know were in DEP would not show the Remote Management screen after connecting to Wi-Fi in the Setup Assistant.
+<!--more-->
 
 I tried these Macs to Wi-Fi again (as sometimes is required), no luck there; I tried ethernet, still no go. Let's shut down the Mac, un-assigned it from its DEP Pre-Stage, then assigned it again, nope, still not having a bar of it.
 

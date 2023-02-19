@@ -13,6 +13,7 @@ type: post
 ---
 
 As part of the onboarding at Culture Amp, I configure the dock at set a default wallpaper. This isn't necessarily to lock down what Camper's can do with their Macs but more-so to get them up and running as quickly as possible and in a consistent environment.
+<!--more-->
 
 In the past I've simply installed a package that dropped an image into a folder and then run a `postinstall` script to set it as the wallpaper like so.
 

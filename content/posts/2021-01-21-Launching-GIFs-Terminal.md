@@ -13,6 +13,7 @@ type: post
 ---
 
 Did you know that you can launch a playing GIF from the Terminal? I didn't until today; but it's really quite simple.
+<!--more-->
 
 I'm working on deploying a new feature to my Mac users and wanted an easy way to show them how it works. I could launch a web-browser linking to a specific support article but wanted something that was simple and caused less friction which is where the thought of displaying a GIF to them after the Policy ran came to mind.
 

@@ -3,7 +3,7 @@ aliases:
   - /2022/05/20/Installing-Xcode-xip
 comments: true
 date: "2022-05-20T00:00:00Z"
-image: /images/xcode-12-256x256.png
+featuredImage: /images/xcode-12-256x256.png
 image_alt: Xcode App Icon
 tags:
 - jamf
@@ -15,6 +15,7 @@ type: post
 ---
 
 I recently (just yesterday), updated how we're installing Xcode on end-user systems at work and thought I might share the steps/script that we're using.
+<!--more-->
 
 ## Tools
 - [unxip][1]
