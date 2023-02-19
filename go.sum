@@ -1,2 +1,4 @@
+github.com/AlanTanner/pdfjs-hugo-module v0.0.0-20230218195725-f8cd933d1e74 h1:3qhqTupXmlP/Ifydp31u+mSENBpOu1dZtBDHt+tJWxw=
+github.com/AlanTanner/pdfjs-hugo-module v0.0.0-20230218195725-f8cd933d1e74/go.mod h1:rDKGlupurJcLDdZmbZKYq4SZabM9Q+68VLpzTk7vz/w=
 github.com/lukeorth/poison v0.0.0-20230215184353-4026789a0657 h1:Aue13GIdWE/AIBvFRQr8BSaM8ohBDbV5xEvnJOBLTGs=
 github.com/lukeorth/poison v0.0.0-20230215184353-4026789a0657/go.mod h1:fYVpevZiA79ef8Q1DkUgg/MF53oy4mKFSFTnK+EeiO0=
