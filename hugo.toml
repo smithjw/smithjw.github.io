@@ -1,8 +1,16 @@
 baseURL = "https://smithjw.me"
 languageCode = "en-us"
 paginate = 8
-# sectionPagesMenu = "main"
 title = "james' ubiquitous blog"
+
+[Author]
+    email = "james@smithjw.me"
+    name = "James Smith"
+
+[outputFormats]
+    [outputFormats.RSS]
+        baseName = "feed"
+        mediatype = "application/rss"
 
 [module]
     [[module.imports]]
