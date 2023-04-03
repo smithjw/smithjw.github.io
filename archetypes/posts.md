@@ -6,7 +6,7 @@ tags:
   -
 title:
 type: post
-fediverse: 109811260017364964
+fediverse:
 comments: true
 ---
 

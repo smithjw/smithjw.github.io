@@ -5,4 +5,9 @@
 <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/fonts.css">
 <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/katex.min.css">
 <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/tabs.css">
+
+<!-- Custom CSS so that users can override settings above. Load this last. -->
 <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
+
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}

@@ -1,4 +1,4 @@
-baseURL = "https://smithjw.me"
+baseURL = "https://smithjw.me/"
 languageCode = "en-us"
 paginate = 8
 title = "james' ubiquitous blog"
