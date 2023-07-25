@@ -22,7 +22,7 @@ The Sketchnote above was created by the talented [Ashton Rodenhiser](https://www
 Below you'll find a collection of all the items I spoke about in the presentation, the recording (*coming soon*), and a link to the repo where I presented my talk from.
 
 ## Talk Recording
-{{< youtube 3ap5oWbia0 >}}
+{{< youtube -3ap5oWbia0 >}}
 
 ## Talk Repositry
 [MDOYVR22 - Visual Studio Code for Mac Admins](https://github.com/smithjw/vs-code-mac-admins)
